@@ -1,0 +1,25 @@
+{
+  "name": "householdbudget",
+  "version": "1.0.0",
+  "description": "simplyHouseholdBudget JS - Projekt 1 Domowy budżet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Magyarrigo/HouseholdBudget.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Magyarrigo/HouseholdBudget/issues"
+  },
+  "homepage": "https://github.com/Magyarrigo/HouseholdBudget#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.62.1"
+  }
+}
