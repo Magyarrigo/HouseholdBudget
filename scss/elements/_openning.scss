@@ -1,0 +1,64 @@
+.openning{
+  width: 100%;
+  max-width: $containerWidth;
+  position:relative;
+
+  //background-color: red;
+  max-height: 600px;
+  &__Slides{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+
+  }
+  &__Button:hover{
+    cursor: pointer;
+  }
+  &__Button--Left{
+    position: absolute;
+    top:45%;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    background-image: url("../assets/arrow_left.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: solid 2px $color-black;
+    border-radius: 50%;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+  }
+  &__Button--Right{
+    position: absolute;
+    top:45%;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    background-image: url("../assets/arrow_right.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: solid 2px $color-black;
+    border-radius: 50%;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+  }
+  &__Title{
+    width: 75%;
+    position: absolute;
+    text-align: center;
+    top: 18%;
+    left: 10%;
+    font-size: 800;
+    font-weight: bold;
+    border: solid 3px $color-primary;
+    border-radius: 50px;
+    background-color: $color-primary-shadow;
+    color: $color-primary;
+  }
+}
+
+
+
+

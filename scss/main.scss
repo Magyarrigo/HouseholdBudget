@@ -1,13 +1,12 @@
-$color-primary: #0000ff;
-$color-primary-shadow: rgba(0, 128, 0, .26);
-$color-black: #000000;
-$color-white: #ffffff;
-$color-grey: #818181;
-$color-light-grey: #F7F7F7;
-$color-logo-string: $color-primary;
-$color-grey-medium: #e1e2e3
-
-
-p {
-    color: red;
-};
+@import "./generic/reset";
+@import "./settings/fonts";
+@import "./settings/color";
+@import "./settings/mixins";
+@import "./elements/basic";
+@import "./elements/header";
+//@import "elements/openning";
+//@import "elements/offer";
+//@import "elements/pricing";
+//@import "elements/calculator";
+//@import "elements/aboutMe";
+//@import "elements/footer";
