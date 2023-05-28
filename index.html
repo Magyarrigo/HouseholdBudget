@@ -20,7 +20,7 @@
       <div class="header__container container">
         <img class="logo" src="assets/logo-magyarrigo.svg" />
         <p id="home" class="projectTitle">HouseholdBudget</p>
-        <nav>
+        <nav class="nav">
           <ul class="nav__buttons">
             <li class="nav__element">
               <a href="#incomes" class="nav__link">INCOMES</a>
@@ -41,6 +41,54 @@
         </nav>
       </div>
     </header>
-    <p>agata</p>
+    <main class="container main__container">
+      <div class="row balanceSheet">
+        <div class="col-1 balanceSheet__leftField"></div>
+        <div class="col-10 balanceSheet__result">
+          <div>
+            <h2>tu będzie wynik:możesz jeszcze wydać: 6542 zł</h2>
+          </div>
+        </div>
+        <div class="col-1 balanceSheet__rightField"></div>
+      </div>
+
+      <div class="row inputFields">
+        <div class="col-6 inputFields__incomes"></div>
+        <div class="col-6 inputFields__expenses"></div>
+      </div>
+
+      <section class="row balanceTable">
+        <div class="col-6 balanceTable__incomes" id="incomes"></div>
+        <div class="col-6 balanceTable__expenses" id="expenses"></div>
+      </section>
+      <div class="row aboutMe" id="aboutMe">
+        <div class="col-2 aboutMe__myPicture"></div>
+        <div class="col-10 aboutMe__myCV">
+          <h2 id="about">about Me</h2>
+          <p>
+            I graduated from the Technical University in Budapest. I'm Master of
+            Science in Nuclear Power Engineering. I have been interested in
+            programming since my studies. This year I became interested in
+            creating websites, so I decided to learn English and complete a
+            "Frontend Developer" course at CODERSLAB and "Java Script and React"
+            course at FUTURE COLLARS.
+          </p>
+
+          <p>
+            Fluent in German, Russian and Hungarian. English - B2. My native
+            language is Polish.
+          </p>
+
+          <p>I will be happy to answer your questions.</p>
+
+          <p>
+            Basketball is my cup of tea. I was a basketball referee for 25
+            years.
+          </p>
+          <p></p>
+        </div>
+      </div>
+    </main>
+    <script src="./js/index.js"></script>
   </body>
 </html>

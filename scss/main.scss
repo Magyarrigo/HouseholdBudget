@@ -4,9 +4,14 @@
 @import "./settings/mixins";
 @import "./elements/basic";
 @import "./elements/header";
+@import "./elements/mainContainer";
+@import "./elements/balanceSheetResult.scss";
+@import "./elements/_inputFields.scss";
+@import "./elements/balanceTable.scss";
+
 //@import "elements/openning";
 //@import "elements/offer";
 //@import "elements/pricing";
 //@import "elements/calculator";
-//@import "elements/aboutMe";
+@import "elements/aboutMe";
 //@import "elements/footer";

@@ -1,0 +1,17 @@
+.balanceSheet {
+  display: flex;  
+  height: 100%;
+  
+  &__result {
+    display:flex;
+    align-items: center;
+    background-color: green;
+    
+  }
+  &__leftField {
+    background-color: yellow;
+  }
+  &__rightField {
+    background-color: yellow;
+  }
+}
