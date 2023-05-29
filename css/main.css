@@ -537,7 +537,7 @@ h1 {
 
 .nav {
   width: 35%;
-  position: absolute;
+  position: relative;
   right: 0;
 }
 
