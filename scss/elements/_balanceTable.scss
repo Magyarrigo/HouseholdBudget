@@ -1,20 +1,32 @@
 .balanceTable{
     
-    height: 600px;
+    height: 400px;
     &__incomes{
+        position: relative;
         background-color: red;
-        border: solid 1px black;
-        &--list{
-            display:flex;
-            justify-content:space-between;
-            padding-left: 1%;
-            padding-right: 1%;
-        }
+        border: solid 1px $color-primary;
+        border-radius: 20px;
         &--container{
             display:flex;
             flex-direction: column;
-            justify-content: space-between;
+            //justify-content: space-between;
         }
+        &--list{
+            display:flex;
+            justify-content:space-between;
+            padding: 1% 2% 1% 2%;
+            p{
+                width: 60%;
+            }
+        }
+        &--summary{
+            position:absolute;
+            left: 5%;
+            bottom: 5%;
+
+
+        }
+        
 
         
     }
