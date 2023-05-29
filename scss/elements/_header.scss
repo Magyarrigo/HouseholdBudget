@@ -100,7 +100,7 @@
     transition: 0.3s ease-in-out;
     &--active {
       .nav__hamburger--line:first-child {
-        transform: translateY(-999px);
+        transform: translateY(-998px);
       }
       .nav__hamburger--line:nth-child(2) {
         transform: rotate(-405deg) translateY(10px);
