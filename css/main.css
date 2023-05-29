@@ -478,7 +478,7 @@ a {
   text-decoration: none;
 }
 
-h2 {
+h1 {
   font-family: "Raleway", sans-serif;
   font-size: 2.25rem;
 }
@@ -798,22 +798,46 @@ h2 {
 }
 .balanceTable__incomes {
   background-color: red;
+  border: solid 1px black;
+}
+.balanceTable__incomes--list {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+.balanceTable__incomes--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .balanceTable__expenses {
   background-color: red;
+  border: solid 1px black;
+}
+.balanceTable__expenses--list {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+.balanceTable__expenses--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .aboutMe__myPicture {
   border: blue 2px solid;
   border-radius: 20px;
   background-image: url("/assets/Photo.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 .aboutMe__myCV {
   background-color: #e1e2e3;
   border: blue 2px solid;
-  border-radius: 20px;
+  border-radius: 21px;
 }
 .aboutMe__myCV h2 {
   text-align: center;

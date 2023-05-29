@@ -46,19 +46,76 @@
         <div class="col-1 balanceSheet__leftField"></div>
         <div class="col-10 balanceSheet__result">
           <div>
-            <h2>tu będzie wynik:możesz jeszcze wydać: 6542 zł</h2>
+            <h1>Bilans jest dodatni - możesz jeszcze wydać: 12 642 zł</h1>
           </div>
         </div>
         <div class="col-1 balanceSheet__rightField"></div>
       </div>
 
       <div class="row inputFields">
-        <div class="col-6 inputFields__incomes"></div>
-        <div class="col-6 inputFields__expenses"></div>
+        <div class="col-6 inputFields__incomes">
+          <h1>PRZYCHODY:</h1>
+          <div class="inputFields__incomes--inputArea">
+            <input placeholder="Nazwa przychodu" />
+            <input placeholder="Kwota" />
+            <button>DODAJ</button>
+          </div>
+        </div>
+
+        <div class="col-6 inputFields__expenses">
+          <h1>WYDATKI:</h1>
+          <div class="inputFields__expenses--inputArea">
+            <input placeholder="Nazwa wydatku" />
+            <input placeholder="Kwota" />
+            <button>DODAJ</button>
+          </div>
+        </div>
       </div>
 
       <section class="row balanceTable">
-        <div class="col-6 balanceTable__incomes" id="incomes"></div>
+        <div class="col-6 balanceTable__incomes" id="incomes">
+          <div>
+            <div class="balanceTable__incomes--container">
+              <div>
+                <ul>
+                  <li>
+                    <div class="balanceTable__incomes--list">
+                      <p>jeden dodatkowy tekst</p>
+                      <button>Edytuj</button><button>Usuń</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="balanceTable__incomes--list">
+                      <p>jeden dodatkowy tekst</p>
+                      <button>Edytuj</button><button>Usuń</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="balanceTable__incomes--list">
+                      <p>jeden dodatkowy tekst</p>
+                      <button>Edytuj</button><button>Usuń</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="balanceTable__incomes--list">
+                      <p>jeden dodatkowy tekst</p>
+                      <button>Edytuj</button><button>Usuń</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="balanceTable__incomes--list">
+                      <p>jeden dodatkowy tekst</p>
+                      <button>Edytuj</button><button>Usuń</button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <h1 class="balanceTable__incomes--summary">
+                SUMA PRZYCHODÓW: 44 987 zł
+              </h1>
+            </div>
+          </div>
+        </div>
         <div class="col-6 balanceTable__expenses" id="expenses"></div>
       </section>
       <div class="row aboutMe" id="aboutMe">
