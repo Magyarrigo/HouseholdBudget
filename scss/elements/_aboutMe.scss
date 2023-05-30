@@ -1,33 +1,28 @@
-.aboutMe{
-  &__myPicture{
+.aboutMe {
+  &__myPicture {
     //display: flex;
-    
-    
-    
+
     border: blue 2px solid;
     border-radius: 20px;
     background-image: url("/assets/Photo.jpg");
-    background-size:cover;
-    ;
+    background-size: cover;
+
     background-repeat: no-repeat;
-    
   }
-  &__myCV{
+  &__myCV {
     background-color: $color-grey-medium;
     border: blue 2px solid;
     border-radius: 21px;
-    h2{
+    h2 {
       text-align: center;
       font-weight: bold;
       font-size: 600;
       color: $color-primary;
       padding-top: 1em;
     }
-    p{
+    p {
       padding: 1.5em 3em 0 3em;
       letter-spacing: 2px;
-
     }
-
   }
 }
