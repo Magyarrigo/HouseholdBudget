@@ -42,11 +42,12 @@
       </div>
     </header>
     <main class="container main__container">
+
       <div class="row balanceSheet">
         <div class="col-1 balanceSheet__leftField"></div>
         <div class="col-10 balanceSheet__result">
-          <div>
-            <h1>Bilans jest dodatni - możesz jeszcze wydać: 12 642 zł</h1>
+          <div id="balanceSheetResult">
+            
           </div>
         </div>
         <div class="col-1 balanceSheet__rightField"></div>
@@ -54,7 +55,7 @@
 
       <div class="row inputFields">
         <div class="col-6 inputFields__incomes">
-          <h1>PRZYCHODY:</h1>
+          <h1 id = "incomes">PRZYCHODY:</h1>
           <div class="inputFields__incomes--inputArea">
             <input placeholder="Nazwa przychodu" />
             <input placeholder="Kwota" />
@@ -109,52 +110,54 @@
                     </div>
                   </li>
                 </ul>
-              </div>
-              <h1 class="balanceTable__incomes--summary">
-                SUMA PRZYCHODÓW: 44 987 zł
-              </h1>
-            </div>
-          </div>
+              </div>              
+            </div> 
+            
+          </div>          
         </div>
+
         <div class="col-6 balanceTable__expenses" id="expenses">
           <div>
-            <ul>
-              <li>
-                <div class="balanceTable__expenses--list">
-                  <p>jeden dodatkowy tekst</p>
-                  <button>Edytuj</button><button>Usuń</button>
-                </div>
-              </li>
-              <li>
-                <div class="balanceTable__expenses--list">
-                  <p>jeden dodatkowy tekst</p>
-                  <button>Edytuj</button><button>Usuń</button>
-                </div>
-              </li>
-              <li>
-                <div class="balanceTable__expenses--list">
-                  <p>jeden dodatkowy tekst</p>
-                  <button>Edytuj</button><button>Usuń</button>
-                </div>
-              </li>
-              <li>
-                <div class="balanceTable__expenses--list">
-                  <p>jeden dodatkowy tekst</p>
-                  <button>Edytuj</button><button>Usuń</button>
-                </div>
-              </li>
-              <li>
-                <div class="balanceTable__expenses--list">
-                  <p>jeden dodatkowy tekst</p>
-                  <button>Edytuj</button><button>Usuń</button>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <h1 class="balanceTable__expenses--summary">
-            SUMA WYDATKÓW: 44 987 zł
-          </h1>
+            <div class="balanceTable__expenses--container">
+              <div>
+                <ul>
+                  <li>
+                    <div class="balanceTable__expenses--list">
+                      <p>jeden dodatkowy tekst</p>
+                      <button>Edytuj</button><button>Usuń</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="balanceTable__expenses--list">
+                      <p>jeden dodatkowy tekst</p>
+                      <button>Edytuj</button><button>Usuń</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="balanceTable__expenses--list">
+                      <p>jeden dodatkowy tekst</p>
+                      <button>Edytuj</button><button>Usuń</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="balanceTable__expenses--list">
+                      <p>jeden dodatkowy tekst</p>
+                      <button>Edytuj</button><button>Usuń</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="balanceTable__expenses--list">
+                      <p>jeden dodatkowy tekst</p>
+                      <button>Edytuj</button><button>Usuń</button>
+                    </div>
+                  </li>
+                </ul>
+              </div>              
+            </div> 
+            
+          </div>          
         </div>
+        
 
         </div>
       </section>
@@ -182,6 +185,7 @@
             Basketball is my cup of tea. I was a basketball referee for 25
             years.
           </p>
+          <p></p>
           <p></p>
         </div>
       </div>

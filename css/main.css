@@ -480,7 +480,7 @@ a {
 
 h1 {
   font-family: "Open Sans", sans-serif;
-  font-size: 2.25rem;
+  font-size: 1.5em;
 }
 
 .container {
@@ -614,14 +614,14 @@ h1 {
 }
 
 .main__container {
-  height: 100px;
+  margin-bottom: 50px;
   position: relative;
   top: 70px;
 }
 
 .balanceSheet {
   display: flex;
-  height: 100%;
+  height: 200px;
 }
 .balanceSheet__result {
   display: flex;
@@ -652,11 +652,12 @@ h1 {
   position: relative;
   background-color: red;
   border: solid 1px rgb(3, 3, 196);
-  border-radius: 20px;
+  border-radius: 10px;
 }
 .balanceTable__incomes--container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .balanceTable__incomes--list {
   display: flex;
@@ -667,33 +668,40 @@ h1 {
   width: 60%;
 }
 .balanceTable__incomes--summary {
-  position: absolute;
-  left: 5%;
-  bottom: 5%;
+  position: relative;
+  left: 15px;
+  bottom: 15%;
 }
 .balanceTable__expenses {
   position: relative;
   background-color: red;
   border: solid 1px rgb(3, 3, 196);
-  border-radius: 20px;
-}
-.balanceTable__expenses--list {
-  display: flex;
-  justify-content: space-between;
-  padding: 1% 2% 1% 2%;
+  border-radius: 10px;
 }
 .balanceTable__expenses--container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+.balanceTable__expenses--list {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 2% 1% 2%;
+}
+.balanceTable__expenses--list p {
+  width: 60%;
+}
 .balanceTable__expenses--summary {
-  position: absolute;
-  left: 5%;
-  bottom: 5%;
+  position: relative;
+  left: 15px;
+  bottom: 15%;
 }
 
+.aboutMe {
+  padding-bottom: 33px;
+}
 .aboutMe__myPicture {
+  aspect-ratio: auto;
   border: blue 2px solid;
   border-radius: 20px;
   background-image: url("/assets/Photo.jpg");

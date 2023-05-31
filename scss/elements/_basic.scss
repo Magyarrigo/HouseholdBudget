@@ -26,13 +26,14 @@ a {
 
 h1 {
   font-family: $font-open-sans;
-  font-size: 2.25rem;
+  font-size: 1.5em;
 }
 
 .container {
   max-width: $containerWidth;
   margin: 0 auto;
   padding: 0 0.9375rem;
+  
 
   .row {
     display: flex;

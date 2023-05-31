@@ -1,6 +1,9 @@
 .aboutMe {
+  padding-bottom: 33px;
+
   &__myPicture {
     //display: flex;
+    aspect-ratio: auto;
 
     border: blue 2px solid;
     border-radius: 20px;
