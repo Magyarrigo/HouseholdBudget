@@ -12,6 +12,36 @@ hamburgerMenu.addEventListener("click", function () {
 //and cross to close it.
 //End of the hamburger-menu managment.
 
+//construction and management of the income table
+const incomesArray = [
+  ["tekst1", 123],
+  ["tekst2", 23.43],
+  ["nowytekst", 34.43],
+];
+const expensesArray = [
+  ["tekst3", 23.23],
+  ["tekstszesc", 654.12],
+];
+
+let incomesArrayValues = [];
+incomesArray.map((element) => {
+  incomesArrayValues.push(element[1]);
+});
+let expensesArrayValues = [];
+expensesArray.map((element) => {
+  expensesArrayValues.push(element[1]);
+});
+
+let sumOfIncomes = 0;
+let sumOfExpenses = 0;
+sumOfIncomes = incomesArrayValues.reduce((acc, number) => {
+  return acc + number;
+}, 0);
+sumOfExpenses = expensesArrayValues.reduce((acc, number) => {
+  return acc + number;
+}, 0);
+//end of construction and managment of the income table
+
 //Creating the <h1> element with the balance rusults.
 const balanceTableIncomesSummary = document.querySelector(
   ".balanceTable__incomes--container"
@@ -24,8 +54,8 @@ const neutralBalanceText = "BILANS  WYNOSI  ZERO";
 const positiveBalanceText = "BILANS DODATNI MOŻESZ JESZCZE WYDAĆ:";
 const negativeBalanceText = "BILANS UJEMNY JESTEŚ NA MINUSIE:";
 const currency = "zł";
-const sumOfIncomes = 0;
-const sumOfExpenses = 0;
+//let sumOfIncomes = 0;
+//const sumOfExpenses = 0;
 
 let balanceSheetresult = sumOfIncomes - sumOfExpenses;
 let balanceIndex = "";

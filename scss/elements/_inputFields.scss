@@ -1,9 +1,26 @@
-.inputFields{
-    height: 100px;
-    &__incomes{
-        background-color: aqua;
+.inputFields {
+  display: flex;
+  //height: 100px;
+  &__incomes {
+    padding-left: 10px;
+    border-radius: 10px;
+    border: solid 2px blue;
+    background-color: aqua;
+    &--inputArea {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-around;
     }
-    &__expenses{
-        background-color: blue;
+  }
+  &__expenses {
+    padding-left: 10px;
+    border-radius: 10px;
+    border: solid 2px blue;
+    background-color: aqua;
+    &--inputArea {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-around;
     }
+  }
 }

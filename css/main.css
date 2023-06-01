@@ -636,13 +636,29 @@ h1 {
 }
 
 .inputFields {
-  height: 100px;
+  display: flex;
 }
 .inputFields__incomes {
+  padding-left: 10px;
+  border-radius: 10px;
+  border: solid 2px blue;
   background-color: aqua;
 }
+.inputFields__incomes--inputArea {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+}
 .inputFields__expenses {
-  background-color: blue;
+  padding-left: 10px;
+  border-radius: 10px;
+  border: solid 2px blue;
+  background-color: aqua;
+}
+.inputFields__expenses--inputArea {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .balanceTable {
@@ -700,10 +716,10 @@ h1 {
 .aboutMe {
   padding-bottom: 33px;
 }
-.aboutMe__myPicture {
-  aspect-ratio: auto;
+.aboutMe__myPicture--cirkle {
+  min-height: 360px;
   border: blue 2px solid;
-  border-radius: 20px;
+  border-radius: 10px;
   background-image: url("/assets/Photo.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -711,7 +727,7 @@ h1 {
 .aboutMe__myCV {
   background-color: #e1e2e3;
   border: blue 2px solid;
-  border-radius: 21px;
+  border-radius: 10px;
 }
 .aboutMe__myCV h2 {
   text-align: center;
