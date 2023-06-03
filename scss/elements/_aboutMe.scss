@@ -1,19 +1,20 @@
 .aboutMe {
   padding-bottom: 33px;
 
-  &__myPicture{
+  &__myPicture {
     //min-height: 200px;
     &--cirkle {
-    min-height: 360px;;
-    
-    
-    border: blue 2px solid;
-    border-radius: 10px;
-    background-image: url("/assets/Photo.jpg");
-    background-size: cover;
-
-    background-repeat: no-repeat;
-  }}
+      @include mobile{
+        display:none;
+      }
+      min-height: 360px;
+      border: blue 2px solid;
+      border-radius: 10px;
+      background-image: url("/assets/Photo.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
   &__myCV {
     background-color: $color-grey-medium;
     border: blue 2px solid;
@@ -31,4 +32,3 @@
     }
   }
 }
-

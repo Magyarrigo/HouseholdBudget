@@ -45,9 +45,9 @@
 
       <div class="row balanceSheet">
         <div class="col-1 balanceSheet__leftField"></div>
+
         <div class="col-10 balanceSheet__result">
-          <div id="balanceSheetResult">
-            
+          <div id="balanceSheetResult">            
           </div>
         </div>
         <div class="col-1 balanceSheet__rightField"></div>
@@ -55,23 +55,26 @@
 
       <div class="row inputFields">
         <div class="col-6 inputFields__incomes">
+          <p class = "inputFields__incomes--separatingLine">tekst ma miec kolor tla</p>
           <h1 id = "incomes">PRZYCHODY:</h1>
+          
           <div class="inputFields__incomes--inputArea">
-            <input placeholder="Nazwa przychodu" />
-            <input placeholder="Kwota" />
-            <button>DODAJ</button>
+            <input  type = "text" id ="inputIncomeText" placeholder="Nazwa przychodu" />
+            <input id = "inputIncomeSum" placeholder="Kwota" />
+            <button id = "inputIncomeButton">DODAJ</button>
           </div>
-          <p>tekst ma miec kolor tla</p> 
+          <p class = "inputFields__incomes--separatingLine">tekst ma miec kolor tla</p> 
         </div>
 
         <div class="col-6 inputFields__expenses">
+          <p class = "inputFields__expenses--separatingLine">tekst ma miec kolor tla</p>
           <h1>WYDATKI:</h1>
           <div class="inputFields__expenses--inputArea">
-            <input placeholder="Nazwa wydatku" />
-            <input placeholder="Kwota" />
-            <button>DODAJ</button>
+            <input type = "text" id = "inputExpenseText" placeholder="Nazwa wydatku" />
+            <input id = "inputExpenseSum" placeholder="Kwota" />
+            <button id = "inputExpenseButton">DODAJ</button>
           </div>
-          <p>tekst ma miec kolor tla</p>
+          <p class = "inputFields__expenses--separatingLine">tekst ma miec kolor tla</p>
         </div>
       </div>
 
@@ -80,6 +83,7 @@
           <div>
             <div class="balanceTable__incomes--container">
               <div>
+                <p class = "balanceTable__incomes--separatingLine"> tekstma miec kolor tla</p>
                 <ul>
                   <li>
                     <div class="balanceTable__incomes--list">
@@ -122,6 +126,7 @@
           <div>
             <div class="balanceTable__expenses--container">
               <div>
+                <p class = "balanceTable__expenses--separatingLine"> tekstma miec kolor tla</p>
                 <ul>
                   <li>
                     <div class="balanceTable__expenses--list">

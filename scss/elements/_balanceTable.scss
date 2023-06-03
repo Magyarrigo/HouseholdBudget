@@ -3,13 +3,19 @@
   &__incomes {
     
     position: relative;
-    background-color: red;
+    background-color: $color-grey-medium;
     border: solid 1px $color-primary;
     border-radius: 10px;
+    &--separatingLine{
+      color: $color-grey-medium;
+    }
     &--container {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      
+    
+      
     }
     &--list {
       display: flex;
@@ -28,9 +34,12 @@
   &__expenses {
     
     position: relative;
-    background-color: red;
+    background-color: $color-grey-medium;
     border: solid 1px $color-primary;
     border-radius: 10px;
+    &--separatingLine{
+      color: $color-grey-medium;
+    }
     &--container {
       display: flex;
       flex-direction: column;

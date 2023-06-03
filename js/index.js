@@ -13,6 +13,12 @@ hamburgerMenu.addEventListener("click", function () {
 //End of the hamburger-menu managment.
 
 //construction and management of the income table
+
+
+
+
+
+
 const incomesArray = [
   ["tekst1", 123],
   ["tekst2", 23.43],
