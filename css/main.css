@@ -543,6 +543,7 @@ h1 {
   right: 1em;
 }
 .header .nav__buttons {
+  right: 1em;
   width: 55%;
   display: flex;
   justify-content: space-between;
