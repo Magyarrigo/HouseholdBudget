@@ -12,52 +12,183 @@ hamburgerMenu.addEventListener("click", function () {
 //and cross to close it.
 //End of the hamburger-menu managment.
 
-//construction and management of the income table
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
 
-const incomesArrayValues = [123, 15, 26.12,543];
-const incomesArrayDescriptions = ["pierwszy", "drugi", "trzeci"];
-const expensesArrayValues = [254.12, 4,32,47, 7];
-const expensesArrayDescriptions = ["pierwszywyd", "drugiwyd"];
+//construction and management of the balance table
 
-//let incomesArrayValues = [];
-//incomesArray.map((element) => {
-// incomesArrayValues.push(element[1]);
-//});
-//let expensesArrayValues = [];
-//expensesArray.map((element) => {
-//  expensesArrayValues.push(element[1]);
-//});
+//incomes
+const incomesArray = [];
+const incomesArrayValues = [];
 
-//let sumOfIncomes = 0;
-//let sumOfExpenses = 0;
-const sumOfIncomes = incomesArrayValues.reduce((acc, number) => {
-  return acc + number;
-}, 0);
-const sumOfExpenses = expensesArrayValues.reduce((acc, number) => {
-  return acc + number;
-}, 0);
-//end of construction and managment of the income table
+const inputIncomeName = document.querySelector("#inputIncomeText");
+const inputIncomeAmount = document.querySelector("#inputIncomeSum");
+const inputIncomeButton = document.querySelector("#inputIncomeButton");
+const listOfIncomes = document.querySelector("#balanceTableIncomesList");
+
+inputIncomeButton.addEventListener("click", incomeButtonHandleClick);
+
+function incomeButtonHandleClick(event) {
+  event.preventDefault();
+  const incomeName = inputIncomeName.value;
+  const incomeAmount = inputIncomeAmount.value;
+  const incomeID = `item-${incomesArray.length}`;
+  incomesArray.push({
+    incomeName: incomeName,
+    incomeAmount: incomeAmount,
+    incomeID: incomeID,
+  });
+  updateListOfIncomes();
+  const sumOfIncomes = updateSumOfIncomes();
+  balanceTableIncomesSummary.innerHTML = "";
+  const sumOfIncomesH1 = document.createElement("h1");
+  sumOfIncomesH1.innerText = `SUMA PRZYCHODÓW: ${sumOfIncomes} ${currency}`;
+  sumOfIncomesH1.classList.add("balanceTable__incomes--summary");
+  sumOfIncomesH1.id = "incomesSummary";
+  balanceTableIncomesSummary.appendChild(sumOfIncomesH1);
+  updateBalanceSheetResult();
+  clearIncomeForm();
+}
+function updateSumOfIncomes(){
+  const incomesArrayValues = updateIncomesArrayValue();
+  const sumOfIncomes = incomesArrayValues.reduce((acc, number) => {
+    return acc + number;
+  }, 0);
+  
+  return sumOfIncomes;
+}
+
+function clearIncomeForm() {
+  inputIncomeName.value = "";
+  inputIncomeAmount.value = "";
+}
+function updateListOfIncomes() {
+  listOfIncomes.innerHTML = "";
+  incomesArray.forEach((income, index) => {
+    const item = document.createElement("li");
+    item.innerHTML = `<div><p></p><button>EDYTUJ<button>USUŃ</div>`;
+    listOfIncomes.appendChild(item);
+
+    const incomesList = listOfIncomes.querySelectorAll("div");
+    incomesList[index].classList.add("balanceTable__incomes--list");
+
+    const incomeItem = listOfIncomes.querySelectorAll("p");
+    incomeItem[
+      index
+    ].textContent = `${income.incomeName} - ${income.incomeAmount} ${currency}`;
+    incomeItem[index].id = `${income.incomeID}`;
+  });
+}
+function updateIncomesArrayValue() {
+  const incomesArrayValues = [];
+  incomesArray.forEach((income, index) => {
+    const incomeAsNumber = parseFloat(income.incomeAmount);
+    incomesArrayValues.push(incomeAsNumber);
+  });
+  return incomesArrayValues;
+}
+//endOfIncomes
+
+///////////////////////////////////////////////////////////////////
+
+//expenses
+const inputExpenseName = document.querySelector("#inputExpenseText");
+const inputExpenseAmount = document.querySelector("#inputExpenseSum");
+const inputExpenseButton = document.querySelector("#inputExpenseButton");
+const listOfExpenses = document.querySelector("#balanceTableExpensesList");
+const expensesArray = [];
+const expensesArrayValues = [];
+
+inputExpenseButton.addEventListener("click", expenseButtonHandleClick);
+
+function expenseButtonHandleClick(event) {
+  event.preventDefault();
+
+  const expenseName = inputExpenseName.value;
+  const expenseAmount = inputExpenseAmount.value;
+  const expenseID = `item-${expensesArray.length}`;
+  expensesArray.push({
+    expenseName: expenseName,
+    expenseAmount: expenseAmount,
+    expenseID: expenseID,
+  });
+  updateListOfExpenses();
+  const sumOfExpenses = updateSumOfExpenses();
+  balanceTableExpensesSummary.innerHTML = "";
+  const sumOfExpensesH1 = document.createElement("h1");
+  sumOfExpensesH1.innerText = `SUMA WYDATKÓW: ${sumOfExpenses} ${currency}`;
+  sumOfExpensesH1.classList.add("balanceTable__expenses--summary");
+  sumOfExpensesH1.id = "expensesSummary";
+  balanceTableExpensesSummary.appendChild(sumOfExpensesH1);
+  updateBalanceSheetResult();
+  clearExpenseForm();
+}
+
+function clearExpenseForm() {
+  inputExpenseName.value = "";
+  inputExpenseAmount.value = "";
+}
+function updateListOfExpenses() {
+  listOfExpenses.innerHTML = "";
+  expensesArray.forEach((expense, index) => {
+    const item = document.createElement("li");
+    item.innerHTML = `<div><p></p><button>EDYTUJ<button>USUŃ</div>`;
+    listOfExpenses.appendChild(item);
+
+    const expensesList = listOfExpenses.querySelectorAll("div");
+    expensesList[index].classList.add("balanceTable__expenses--list");
+
+    const expenseItem = listOfExpenses.querySelectorAll("p");
+    expenseItem[
+      index
+    ].textContent = `${expense.expenseName} - ${expense.expenseAmount} ${currency}`;
+    expenseItem[index].id = `${expense.expenseID}`;
+  });
+}
+function updateExpensesArrayValue() {
+  const expensesArrayValues = [];
+  expensesArray.forEach((expense, index) => {
+    const expenseAsNumber = parseFloat(expense.expenseAmount);
+    expensesArrayValues.push(expenseAsNumber);
+  });
+  return expensesArrayValues;
+}
+function updateSumOfExpenses(){
+  const expensesArrayValues = updateExpensesArrayValue();
+  const sumOfExpenses = expensesArrayValues.reduce((acc, number) => {
+    return acc + number;
+  }, 0);
+  
+  return sumOfExpenses;
+}
+//end of Expenses
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//end of construction and managment of the balance table
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Creating the <h1> element with the balance rusults.
-const balanceTableIncomesSummary = document.querySelector(
-  ".balanceTable__incomes--container"
-);
-const balanceTableExpensesSummary = document.querySelector(
-  ".balanceTable__expenses--container"
-);
+const balanceTableIncomesSummary = document.querySelector("#incomesSummary");
+const balanceTableExpensesSummary = document.querySelector("#expensesSummary");
 const balanceSheetResultField = document.querySelector("#balanceSheetResult");
 const neutralBalanceText = "BILANS  WYNOSI  ZERO";
 const positiveBalanceText = "BILANS DODATNI MOŻESZ JESZCZE WYDAĆ:";
 const negativeBalanceText = "BILANS UJEMNY JESTEŚ NA MINUSIE:";
 const currency = "zł";
-//let sumOfIncomes = 0;
-//const sumOfExpenses = 0;
 
-let balanceSheetresult = sumOfIncomes - sumOfExpenses;
+function updateBalanceSheetResult(){
+
+  const sumOfIncomes = updateSumOfIncomes();
+  const sumOfExpenses = updateSumOfExpenses();
+  const balanceSheetResult = sumOfIncomes - sumOfExpenses;
+  balanceSheetResultField.innerHTML ="";
 let balanceIndex = "";
-if (balanceSheetresult == 0) {
+if (balanceSheetResult == 0) {
   balanceIndex = "balance";
-} else if (balanceSheetresult > 0) {
+} else if (balanceSheetResult > 0) {
   balanceIndex = "positive";
 } else {
   balanceIndex = "negative";
@@ -69,40 +200,21 @@ switch (balanceIndex) {
     summaryText = `${neutralBalanceText}`;
     break;
   case "positive":
-    summaryText = `${positiveBalanceText} ${balanceSheetresult} ${currency}`;
+    summaryText = `${positiveBalanceText} ${balanceSheetResult} ${currency}`;
     break;
   case "negative":
-    summaryText = `${negativeBalanceText} ${balanceSheetresult} ${currency}`;
+    summaryText = `${negativeBalanceText} ${balanceSheetResult} ${currency}`;
     break;
   default:
     summaryText = "WPROWADŹ POPRAWNE DANE";
 }
 
+
+
+
 const balanceSheetResultH1 = document.createElement("h1");
 balanceSheetResultH1.innerText = summaryText;
 balanceSheetResultH1.classList.add("balanceSheetResult");
 balanceSheetResultField.appendChild(balanceSheetResultH1);
+}
 //End of creation of the balanceSheetResult element.
-
-//Creating the <h1> elements with sum of incomes & sum of expenses
-const sumOfIncomesH1 = document.createElement("h1");
-sumOfIncomesH1.innerText = `SUMA PRZYCHODÓW: ${sumOfIncomes} ${currency}`;
-sumOfIncomesH1.classList.add("balanceTable__incomes--summary");
-balanceTableIncomesSummary.appendChild(sumOfIncomesH1);
-
-const sumOfExpensesH1 = document.createElement("h1");
-sumOfExpensesH1.innerText = `SUMA WYDATKÓW: ${sumOfExpenses} ${currency}`;
-sumOfExpensesH1.classList.add("balanceTable__expenses--summary");
-balanceTableExpensesSummary.appendChild(sumOfExpensesH1);
-//End of creation <h1> elements with sum of incomes & sum of expenses
-
-/*var arrayOfParagrafs = [
-  ...document.querySelectorAll(".balanceTable__incomes--item"),
-];
-incomesArrayDescriptions = [];
-arrayOfParagrafs.map((e) => {
-  console.log(e.innerHTML);
-  incomesArrayDescriptions.push(e.innerHTML);
-});
-console.log(incomesArrayDescriptions);
-*/
