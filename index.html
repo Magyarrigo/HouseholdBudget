@@ -54,32 +54,32 @@
       </div>
 
       <div class="row inputFields">
+
         <div class="col-6 inputFields__incomes">
           <p class = "inputFields__incomes--separatingLine">tekst ma miec kolor tla</p>
-          <h1 id = "incomes">PRZYCHODY:</h1>
-          
-          <div class="inputFields__incomes--inputArea">
+          <h1 id = "incomes">PRZYCHODY:</h1>          
+          <form class="inputFields__incomes--inputArea">
             <input  type = "text" id ="inputIncomeText" placeholder="Nazwa przychodu" />
             <input id = "inputIncomeSum" placeholder="Kwota" />
             <button id = "inputIncomeButton">DODAJ</button>
-          </div>
+          </form>
           <p class = "inputFields__incomes--separatingLine">tekst ma miec kolor tla</p> 
         </div>
 
         <div class="col-6 inputFields__expenses">
           <p class = "inputFields__expenses--separatingLine">tekst ma miec kolor tla</p>
-          <h1>WYDATKI:</h1>
-          <div class="inputFields__expenses--inputArea">
+          <h1 id = "expenses">WYDATKI:</h1>
+          <form class="inputFields__expenses--inputArea">
             <input type = "text" id = "inputExpenseText" placeholder="Nazwa wydatku" />
             <input id = "inputExpenseSum" placeholder="Kwota" />
             <button id = "inputExpenseButton">DODAJ</button>
-          </div>
+          </form>
           <p class = "inputFields__expenses--separatingLine">tekst ma miec kolor tla</p>
         </div>
       </div>
 
       <section class="row balanceTable">
-        <div class="col-6 balanceTable__incomes" id="incomes">
+        <div class="col-6 balanceTable__incomes">
           <div>
             <div class="balanceTable__incomes--container">
               <div>
@@ -87,31 +87,31 @@
                 <ul>
                   <li>
                     <div class="balanceTable__incomes--list">
-                      <p>jeden dodatkowy tekst</p>
+                      <p id = "item-0" class = "balanceTable__incomes--item">LISTA PRZYCHODÓW</p>
+                      
+                    </div>
+                  </li>
+                  <li>
+                    <div class="balanceTable__incomes--list">
+                      <p id = "item-1" class = "balanceTable__incomes--item">jeden dodatkowy tekst</p>
                       <button>Edytuj</button><button>Usuń</button>
                     </div>
                   </li>
                   <li>
                     <div class="balanceTable__incomes--list">
-                      <p>jeden dodatkowy tekst</p>
+                      <p class = "balanceTable__incomes--item">jeden dodatkowy tekst</p>
                       <button>Edytuj</button><button>Usuń</button>
                     </div>
                   </li>
                   <li>
                     <div class="balanceTable__incomes--list">
-                      <p>jeden dodatkowy tekst</p>
+                      <p class = "balanceTable__incomes--item">jeden dodatkowy tekst</p>
                       <button>Edytuj</button><button>Usuń</button>
                     </div>
                   </li>
                   <li>
                     <div class="balanceTable__incomes--list">
-                      <p>jeden dodatkowy tekst</p>
-                      <button>Edytuj</button><button>Usuń</button>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="balanceTable__incomes--list">
-                      <p>jeden dodatkowy tekst</p>
+                      <p class = "balanceTable__incomes--item">jeden dodatkowy tekst</p>
                       <button>Edytuj</button><button>Usuń</button>
                     </div>
                   </li>
@@ -122,7 +122,7 @@
           </div>          
         </div>
 
-        <div class="col-6 balanceTable__expenses" id="expenses">
+        <div class="col-6 balanceTable__expenses">
           <div>
             <div class="balanceTable__expenses--container">
               <div>
@@ -130,8 +130,8 @@
                 <ul>
                   <li>
                     <div class="balanceTable__expenses--list">
-                      <p>jeden dodatkowy tekst</p>
-                      <button>Edytuj</button><button>Usuń</button>
+                      <p>LISTA WYDATKÓW</p>
+                      
                     </div>
                   </li>
                   <li>
@@ -163,17 +163,14 @@
             </div> 
             
           </div>          
-        </div>
-        
+        </div>   
 
         </div>
       </section>
       <div class="row aboutMe" id="aboutMe">
         <div class="col-2 aboutMe__myPicture">
-          <div class ="aboutMe__myPicture--cirkle">
-            
-          </div>
-          
+          <div class ="aboutMe__myPicture--cirkle">            
+          </div>          
         </div>
         <div class="col-10 aboutMe__myCV">
           <h2 id="about">about Me</h2>

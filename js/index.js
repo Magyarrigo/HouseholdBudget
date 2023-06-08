@@ -14,36 +14,26 @@ hamburgerMenu.addEventListener("click", function () {
 
 //construction and management of the income table
 
+const incomesArrayValues = [123, 15, 26.12,543];
+const incomesArrayDescriptions = ["pierwszy", "drugi", "trzeci"];
+const expensesArrayValues = [254.12, 4,32,47, 7];
+const expensesArrayDescriptions = ["pierwszywyd", "drugiwyd"];
 
+//let incomesArrayValues = [];
+//incomesArray.map((element) => {
+// incomesArrayValues.push(element[1]);
+//});
+//let expensesArrayValues = [];
+//expensesArray.map((element) => {
+//  expensesArrayValues.push(element[1]);
+//});
 
-
-
-
-const incomesArray = [
-  ["tekst1", 123],
-  ["tekst2", 23.43],
-  ["nowytekst", 34.43],
-];
-const expensesArray = [
-  ["tekst3", 23.23],
-  ["tekstszesc", 654.12],
-];
-
-let incomesArrayValues = [];
-incomesArray.map((element) => {
-  incomesArrayValues.push(element[1]);
-});
-let expensesArrayValues = [];
-expensesArray.map((element) => {
-  expensesArrayValues.push(element[1]);
-});
-
-let sumOfIncomes = 0;
-let sumOfExpenses = 0;
-sumOfIncomes = incomesArrayValues.reduce((acc, number) => {
+//let sumOfIncomes = 0;
+//let sumOfExpenses = 0;
+const sumOfIncomes = incomesArrayValues.reduce((acc, number) => {
   return acc + number;
 }, 0);
-sumOfExpenses = expensesArrayValues.reduce((acc, number) => {
+const sumOfExpenses = expensesArrayValues.reduce((acc, number) => {
   return acc + number;
 }, 0);
 //end of construction and managment of the income table
@@ -105,3 +95,14 @@ sumOfExpensesH1.innerText = `SUMA WYDATKÓW: ${sumOfExpenses} ${currency}`;
 sumOfExpensesH1.classList.add("balanceTable__expenses--summary");
 balanceTableExpensesSummary.appendChild(sumOfExpensesH1);
 //End of creation <h1> elements with sum of incomes & sum of expenses
+
+/*var arrayOfParagrafs = [
+  ...document.querySelectorAll(".balanceTable__incomes--item"),
+];
+incomesArrayDescriptions = [];
+arrayOfParagrafs.map((e) => {
+  console.log(e.innerHTML);
+  incomesArrayDescriptions.push(e.innerHTML);
+});
+console.log(incomesArrayDescriptions);
+*/
