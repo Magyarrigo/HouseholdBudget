@@ -1,6 +1,5 @@
 "use strict";
 
-//hamburger-menu managment
 const navList = document.querySelector(".nav__buttons");
 const hamburgerMenu = document.querySelector(".nav__hamburger");
 
@@ -8,16 +7,7 @@ hamburgerMenu.addEventListener("click", function () {
   navList.classList.toggle("nav__buttons--active");
   hamburgerMenu.classList.toggle("nav__hamburger--active");
 });
-//After click on hamburger-menu the mobil-menu opens
-//and cross to close it.
-//End of the hamburger-menu managment.
 
-///////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////
-
-//construction and management of the balance table
-
-//incomes
 const incomesArray = [];
 const incomesArrayValues = [];
 
@@ -95,11 +85,7 @@ function updateIncomesArrayValue() {
   });
   return incomesArrayValues;
 }
-//endOfIncomes
 
-///////////////////////////////////////////////////////////////////
-
-//expenses
 const inputExpenseName = document.querySelector("#inputExpenseText");
 const inputExpenseAmount = document.querySelector("#inputExpenseSum");
 const inputExpenseButton = document.querySelector("#inputExpenseButton");
@@ -175,16 +161,7 @@ function updateSumOfExpenses() {
 
   return sumOfExpenses;
 }
-//end of Expenses
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//end of construction and managment of the balance table
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//Creating the <h1> element with the balance rusults.
 const balanceTableIncomesSummary = document.querySelector("#incomesSummary");
 const balanceTableExpensesSummary = document.querySelector("#expensesSummary");
 const balanceSheetResultField = document.querySelector("#balanceSheetResult");
@@ -227,4 +204,3 @@ function updateBalanceSheetResult() {
   balanceSheetResultH1.classList.add("balanceSheetResult");
   balanceSheetResultField.appendChild(balanceSheetResultH1);
 }
-//End of creation of the balanceSheetResult element.
