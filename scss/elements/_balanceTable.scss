@@ -1,21 +1,17 @@
 .balanceTable {
   height: 400px;
   &__incomes {
-    
     position: relative;
     background-color: $color-grey-medium;
     border: solid 1px $color-primary;
     border-radius: 10px;
-    &--separatingLine{
+    &--separatingLine {
       color: $color-grey-medium;
     }
     &--container {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      
-    
-      
     }
     &--list {
       display: flex;
@@ -25,7 +21,7 @@
         width: 60%;
       }
     }
-    
+
     &--summary {
       position: relative;
       left: 15px;
@@ -33,12 +29,11 @@
     }
   }
   &__expenses {
-    
     position: relative;
     background-color: $color-grey-medium;
     border: solid 1px $color-primary;
     border-radius: 10px;
-    &--separatingLine{
+    &--separatingLine {
       color: $color-grey-medium;
     }
     &--container {

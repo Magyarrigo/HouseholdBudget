@@ -1,6 +1,6 @@
 .inputFields {
   display: flex;
-  //height: 100px;
+
   &__incomes {
     padding-left: 10px;
     border-radius: 10px;
@@ -22,11 +22,9 @@
         font-size: 0.8em;
       }
     }
-    &--separatingLine{
+    &--separatingLine {
       color: $color-grey-medium;
-
     }
-    
   }
   &__expenses {
     padding-left: 10px;
@@ -50,10 +48,8 @@
         font-size: 0.8em;
       }
     }
-    &--separatingLine{
+    &--separatingLine {
       color: $color-grey-medium;
-
     }
-    
   }
 }

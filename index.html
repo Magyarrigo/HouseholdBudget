@@ -19,7 +19,7 @@
     <header class="header">
       <div class="header__container">
         <img class="logo" src="assets/logo-magyarrigo.svg" />
-        <p id="home" class="projectTitle">HouseholdBudget</p>
+        <p class="projectTitle">HouseholdBudget</p>
         <nav class="nav">
           <ul class="nav__buttons">
             <li class="nav__element">
@@ -53,9 +53,7 @@
 
       <div class="row inputFields">
         <div class="col-6 inputFields__incomes">
-          <p class="inputFields__incomes--separatingLine">
-            tekst ma miec kolor tla
-          </p>
+          <p class="inputFields__incomes--separatingLine">"."</p>
           <h1 id="incomes">PRZYCHODY:</h1>
           <form class="inputFields__incomes--inputArea">
             <input
@@ -66,15 +64,11 @@
             <input type="number" id="inputIncomeSum" placeholder="Kwota" />
             <button type="button" id="inputIncomeButton">DODAJ</button>
           </form>
-          <p class="inputFields__incomes--separatingLine">
-            tekst ma miec kolor tla
-          </p>
+          <p class="inputFields__incomes--separatingLine">"."</p>
         </div>
 
         <div class="col-6 inputFields__expenses">
-          <p class="inputFields__expenses--separatingLine">
-            tekst ma miec kolor tla
-          </p>
+          <p class="inputFields__expenses--separatingLine">"."</p>
           <h1 id="expenses">WYDATKI:</h1>
           <form class="inputFields__expenses--inputArea">
             <input
@@ -85,9 +79,7 @@
             <input type="number" id="inputExpenseSum" placeholder="Kwota" />
             <button type="button" id="inputExpenseButton">DODAJ</button>
           </form>
-          <p class="inputFields__expenses--separatingLine">
-            tekst ma miec kolor tla
-          </p>
+          <p class="inputFields__expenses--separatingLine">"."</p>
         </div>
       </div>
 
@@ -96,9 +88,7 @@
           <div>
             <div class="balanceTable__incomes--container">
               <div>
-                <p class="balanceTable__incomes--separatingLine">
-                  tekstma miec kolor tla
-                </p>
+                <p class="balanceTable__incomes--separatingLine">"."</p>
                 <ul id="balanceTableIncomesList">
                   <li>
                     <div class="balanceTable__incomes--list">
@@ -109,7 +99,9 @@
                   </li>
                 </ul>
               </div>
-              <h1 class = "balanceTable__incomes--summary" id = "incomesSummary">SUMA PRZYCHODÓW:  0 zł</h1>
+              <h1 class="balanceTable__incomes--summary" id="incomesSummary">
+                SUMA PRZYCHODÓW: 0 zł
+              </h1>
             </div>
           </div>
         </div>
@@ -118,16 +110,16 @@
           <div>
             <div class="balanceTable__expenses--container">
               <div>
-                <p class="balanceTable__expenses--separatingLine">
-                  tekstma miec kolor tla
-                </p>
+                <p class="balanceTable__expenses--separatingLine">"."</p>
                 <ul id="balanceTableExpensesList">
                   <li class="balanceTable__expenses--list">
                     <p>LISTA WYDATKÓW</p>
                   </li>
                 </ul>
               </div>
-              <h1 class = "balanceTable__expenses--summary" id = "expensesSummary">SUMA WYDATKÓW:  0 zł</h1>
+              <h1 class="balanceTable__expenses--summary" id="expensesSummary">
+                SUMA WYDATKÓW: 0 zł
+              </h1>
             </div>
           </div>
         </div>
@@ -169,8 +161,8 @@
           <img src="./assets/logo-magyarrigo.svg" />
         </div>
         <div class="footer__container--buttons">
-          <a href="#home">INCOMES</a>
-          <a href="#offer">EXPENSES</a>
+          <a href="#balanceSheetResult">INPUTS</a>
+          <a href="#expenses">EXPENSES</a>
         </div>
 
         <div class="footer__container--contact">

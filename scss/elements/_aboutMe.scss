@@ -2,13 +2,12 @@
   padding-bottom: 33px;
 
   &__myPicture {
-    //min-height: 200px;
     &--cirkle {
-      @include mobile{
-        display:none;
+      @include mobile {
+        display: none;
       }
       min-height: 360px;
-      border: blue 2px solid;
+      border: $color-primary 2px solid;
       border-radius: 10px;
       background-image: url("/assets/Photo.jpg");
       background-size: cover;
@@ -17,7 +16,7 @@
   }
   &__myCV {
     background-color: $color-grey-medium;
-    border: blue 2px solid;
+    border: $color-primary 2px solid;
     border-radius: 10px;
     h2 {
       text-align: center;
