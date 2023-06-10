@@ -24,6 +24,10 @@ function incomeButtonHandleClick(event) {
     clearIncomeForm();
     return;
   }
+  if (inputIncomeAmount.value.length === 0) {
+    clearIncomeForm();
+    return;
+  }
   const incomeName = inputIncomeName.value;
   const incomeAmount = inputIncomeAmount.value;
   const incomeID = `incomeItem-${incomesArray.length}`;
@@ -60,20 +64,20 @@ function updateListOfIncomes() {
   listOfIncomes.innerHTML = "";
   incomesArray.forEach((income, index) => {
     const item = document.createElement("li");
-    item.innerHTML = `<div><p></p><button>EDYTUJ<button>USUŃ</div>`;
+    item.innerHTML = `<div class = "balanceTable__incomes--list"><p></p><button class = "button--edit">EDYTUJ</button><button class = "button--warrning">USUŃ</button></div>`;
     listOfIncomes.appendChild(item);
-
-    const incomesList = listOfIncomes.querySelectorAll("div");
-    incomesList[index].classList.add("balanceTable__incomes--list");
 
     const incomeItem = listOfIncomes.querySelectorAll("p");
     incomeItem[
       index
     ].textContent = `${income.incomeName} - ${income.incomeAmount} ${currency}`;
     incomeItem[index].id = `${income.incomeID}`;
-    const incomeButtons = listOfIncomes.querySelectorAll("button");
-    incomeButtons[0].id = `incomeEditButton-${income.incomeID}`;
-    incomeButtons[1].id = `incomeDeleteButton-${income.incomeID}`;
+
+    const buttonEdit = listOfIncomes.querySelectorAll(".button--edit");
+    buttonEdit[index].id = "incomeButtonEdit-" + index;
+
+    const buttonDelete = listOfIncomes.querySelectorAll(".button--warrning");
+    buttonDelete[index].id = "incomeButtonDelete-" + index;
   });
 }
 function updateIncomesArrayValue() {
@@ -101,6 +105,11 @@ function expenseButtonHandleClick(event) {
     clearExpenseForm();
     return;
   }
+  if (inputExpenseAmount.value.length === 0) {
+    clearExpenseForm();
+    return;
+  }
+
   const expenseName = inputExpenseName.value;
   const expenseAmount = inputExpenseAmount.value;
   const expenseID = `expenseItem-${expensesArray.length}`;
@@ -129,20 +138,20 @@ function updateListOfExpenses() {
   listOfExpenses.innerHTML = "";
   expensesArray.forEach((expense, index) => {
     const item = document.createElement("li");
-    item.innerHTML = `<div><p></p><button>EDYTUJ<button>USUŃ</div>`;
+    item.innerHTML = `<div class = "balanceTable__expenses--list"><p></p><button class = "button--edit">EDYTUJ</button><button class = "button--warrning">USUŃ</button></div>`;
     listOfExpenses.appendChild(item);
-
-    const expensesList = listOfExpenses.querySelectorAll("div");
-    expensesList[index].classList.add("balanceTable__expenses--list");
 
     const expenseItem = listOfExpenses.querySelectorAll("p");
     expenseItem[
       index
     ].textContent = `${expense.expenseName} - ${expense.expenseAmount} ${currency}`;
     expenseItem[index].id = `${expense.expenseID}`;
-    const expenseButtons = listOfExpenses.querySelectorAll("button");
-    expenseButtons[0].id = `expenseEditButton-${expense.expenseID}`;
-    expenseButtons[1].id = `expenseDeleteButton-${expense.expenseID}`;
+
+    const buttonEdit = listOfExpenses.querySelectorAll(".button--edit");
+    buttonEdit[index].id = "expenseButtonEdit-" + index;
+
+    const buttonDelete = listOfExpenses.querySelectorAll(".button--warrning");
+    buttonDelete[index].id = "expenseButtonDelete-" + index;
   });
 }
 function updateExpensesArrayValue() {
