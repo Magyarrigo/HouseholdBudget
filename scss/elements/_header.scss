@@ -30,7 +30,7 @@
       padding-left: 0;
     }
   }
-  .nav {
+  .navContainer {
     width: 35%;
 
     right: 1em;
@@ -97,13 +97,13 @@
         display: block;
         transition: 0.3s ease-in-out;
         &--active {
-          .nav__hamburger--line:first-child {
+          .navContainer__hamburger--line:first-child {
             transform: translateY(-999px);
           }
-          .nav__hamburger--line:nth-child(2) {
+          .navContainer__hamburger--line:nth-child(2) {
             transform: rotate(-405deg) translateY(10px);
           }
-          .nav__hamburger--line:nth-child(3) {
+          .navContainer__hamburger--line:nth-child(3) {
             transform: rotate(45deg) translateY(-10px);
           }
         }

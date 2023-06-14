@@ -1,11 +1,11 @@
 "use strict";
 
-const navList = document.querySelector(".nav__buttons");
-const hamburgerMenu = document.querySelector(".nav__hamburger");
+const navList = document.querySelector(".navContainer__buttons");
+const hamburgerMenu = document.querySelector(".navContainer__hamburger");
 
 hamburgerMenu.addEventListener("click", function () {
-  navList.classList.toggle("nav__buttons--active");
-  hamburgerMenu.classList.toggle("nav__hamburger--active");
+  navList.classList.toggle("navContainer__buttons--active");
+  hamburgerMenu.classList.toggle("navContainer__hamburger--active");
 });
 
 const incomesArray = [];
@@ -20,11 +20,15 @@ inputIncomeButton.addEventListener("click", incomeButtonHandleClick);
 
 function incomeButtonHandleClick(event) {
   event.preventDefault();
-  if (inputIncomeAmount.value < 0) {
+  if (inputIncomeAmount.value <= 0) {
     clearIncomeForm();
     return;
   }
   if (inputIncomeAmount.value.length === 0) {
+    clearIncomeForm();
+    return;
+  }
+  if (inputIncomeName.value.length === 0) {
     clearIncomeForm();
     return;
   }
@@ -106,6 +110,10 @@ function expenseButtonHandleClick(event) {
     return;
   }
   if (inputExpenseAmount.value.length === 0) {
+    clearExpenseForm();
+    return;
+  }
+  if (inputExpenseName.value.length === 0) {
     clearExpenseForm();
     return;
   }
