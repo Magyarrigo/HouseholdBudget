@@ -8,7 +8,7 @@ hamburgerMenu.addEventListener("click", function () {
   hamburgerMenu.classList.toggle("navContainer__hamburger--active");
 });
 
-const incomesArray = [];
+let incomesArray = [];
 //const incomesArrayValues = [];
 
 const inputIncomeName = document.querySelector("#inputIncomeText");
@@ -41,23 +41,18 @@ function incomeButtonHandleClick(event) {
     incomeID: incomeID,
   });
   updateListOfIncomes();
-  const sumOfIncomes = updateSumOfIncomes().toFixed(2);
-  balanceTableIncomesSummary.innerHTML = "";
-  const sumOfIncomesH1 = document.createElement("h1");
-  sumOfIncomesH1.innerText = `SUMA PRZYCHODÓW: ${sumOfIncomes} ${currency}`;
-  sumOfIncomesH1.classList.add("balanceTable__incomes--summary");
-  sumOfIncomesH1.id = "incomesSummary";
-  balanceTableIncomesSummary.appendChild(sumOfIncomesH1);
   updateBalanceSheetResult();
+  createTotalIncomesLine();
   clearIncomeForm();
 }
-function updateSumOfIncomes() {
-  const incomesArrayValues = updateIncomesArrayValue();
-  const sumOfIncomes = incomesArrayValues.reduce((acc, number) => {
-    return acc + number;
-  }, 0);
 
-  return sumOfIncomes;
+function updateSumOfIncomes() {
+  // const incomesArrayValues = updateIncomesArrayValue();
+  // const sumOfIncomes = incomesArrayValues.reduce((acc, number) => {
+  const totalIncomes = incomesArray.reduce((acc, currentValue) => {
+    return acc + parseFloat(currentValue.incomeAmount);
+  }, 0);
+  return totalIncomes;
 }
 
 function clearIncomeForm() {
@@ -81,9 +76,30 @@ function updateListOfIncomes() {
     buttonEdit[index].id = "incomeButtonEdit-" + index;
 
     const buttonDelete = listOfIncomes.querySelectorAll(".button--warrning");
+
     buttonDelete[index].id = "incomeButtonDelete-" + index;
+    buttonDelete[index].addEventListener("click", () => {
+      item.remove();
+      incomesArray = incomesArray.filter((item) => {
+        if (item.incomeID !== income.incomeID) {
+          return item;
+        }
+      });
+      createTotalIncomesLine();
+      updateBalanceSheetResult();
+    });
   });
 }
+function createTotalIncomesLine() {
+  const sumOfIncomes = updateSumOfIncomes().toFixed(2);
+  balanceTableIncomesSummary.innerHTML = "";
+  const sumOfIncomesH1 = document.createElement("h1");
+  sumOfIncomesH1.innerText = `SUMA PRZYCHODÓW: ${sumOfIncomes} ${currency}`;
+  sumOfIncomesH1.classList.add("balanceTable__incomes--summary");
+  sumOfIncomesH1.id = "incomesSummary";
+  balanceTableIncomesSummary.appendChild(sumOfIncomesH1);
+}
+/*
 function updateIncomesArrayValue() {
   const incomesArrayValues = [];
   incomesArray.forEach((income, index) => {
@@ -93,6 +109,8 @@ function updateIncomesArrayValue() {
   });
   return incomesArrayValues;
 }
+
+*/
 
 const inputExpenseName = document.querySelector("#inputExpenseText");
 const inputExpenseAmount = document.querySelector("#inputExpenseSum");
@@ -127,13 +145,7 @@ function expenseButtonHandleClick(event) {
     expenseID: expenseID,
   });
   updateListOfExpenses();
-  const sumOfExpenses = updateSumOfExpenses().toFixed(2);
-  balanceTableExpensesSummary.innerHTML = "";
-  const sumOfExpensesH1 = document.createElement("h1");
-  sumOfExpensesH1.innerText = `SUMA WYDATKÓW: ${sumOfExpenses} ${currency}`;
-  sumOfExpensesH1.classList.add("balanceTable__expenses--summary");
-  sumOfExpensesH1.id = "expensesSummary";
-  balanceTableExpensesSummary.appendChild(sumOfExpensesH1);
+  createTotalExpensesLine();
   updateBalanceSheetResult();
   clearExpenseForm();
 }
@@ -160,8 +172,20 @@ function updateListOfExpenses() {
 
     const buttonDelete = listOfExpenses.querySelectorAll(".button--warrning");
     buttonDelete[index].id = "expenseButtonDelete-" + index;
+
+    buttonDelete[index].addEventListener("click", () => {
+      item.remove();
+      expensesArray = expensesArray.filter((item) => {
+        if (item.expenseID !== expense.expenseID) {
+          return item;
+        }
+      });
+      createTotalExpensesLine();
+      updateBalanceSheetResult();
+    });
   });
 }
+/*
 function updateExpensesArrayValue() {
   const expensesArrayValues = [];
   expensesArray.forEach((expense, index) => {
@@ -170,13 +194,24 @@ function updateExpensesArrayValue() {
   });
   return expensesArrayValues;
 }
+*/
+
 function updateSumOfExpenses() {
-  const expensesArrayValues = updateExpensesArrayValue();
-  const sumOfExpenses = expensesArrayValues.reduce((acc, number) => {
-    return acc + number;
+  //const expensesArrayValues = updateExpensesArrayValue();
+  const totalExpenses = expensesArray.reduce((acc, currentValue) => {
+    return acc + parseFloat(currentValue.expenseAmount);
   }, 0);
 
-  return sumOfExpenses;
+  return totalExpenses;
+}
+function createTotalExpensesLine() {
+  const sumOfExpenses = updateSumOfExpenses().toFixed(2);
+  balanceTableExpensesSummary.innerHTML = "";
+  const sumOfExpensesH1 = document.createElement("h1");
+  sumOfExpensesH1.innerText = `SUMA WYDATKÓW: ${sumOfExpenses} ${currency}`;
+  sumOfExpensesH1.classList.add("balanceTable__expenses--summary");
+  sumOfExpensesH1.id = "expensesSummary";
+  balanceTableExpensesSummary.appendChild(sumOfExpensesH1);
 }
 
 const balanceTableIncomesSummary = document.querySelector("#incomesSummary");
