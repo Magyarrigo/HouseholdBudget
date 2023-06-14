@@ -9,7 +9,7 @@ hamburgerMenu.addEventListener("click", function () {
 });
 
 const incomesArray = [];
-const incomesArrayValues = [];
+//const incomesArrayValues = [];
 
 const inputIncomeName = document.querySelector("#inputIncomeText");
 const inputIncomeAmount = document.querySelector("#inputIncomeSum");
@@ -99,7 +99,7 @@ const inputExpenseAmount = document.querySelector("#inputExpenseSum");
 const inputExpenseButton = document.querySelector("#inputExpenseButton");
 const listOfExpenses = document.querySelector("#balanceTableExpensesList");
 const expensesArray = [];
-const expensesArrayValues = [];
+//const expensesArrayValues = [];
 
 inputExpenseButton.addEventListener("click", expenseButtonHandleClick);
 
