@@ -9,7 +9,6 @@ hamburgerMenu.addEventListener("click", function () {
 });
 
 let incomesArray = [];
-//const incomesArrayValues = [];
 
 const inputIncomeName = document.querySelector("#inputIncomeText");
 const inputIncomeAmount = document.querySelector("#inputIncomeSum");
@@ -47,8 +46,6 @@ function incomeButtonHandleClick(event) {
 }
 
 function updateSumOfIncomes() {
-  // const incomesArrayValues = updateIncomesArrayValue();
-  // const sumOfIncomes = incomesArrayValues.reduce((acc, number) => {
   const totalIncomes = incomesArray.reduce((acc, currentValue) => {
     return acc + parseFloat(currentValue.incomeAmount);
   }, 0);
@@ -99,31 +96,19 @@ function createTotalIncomesLine() {
   sumOfIncomesH1.id = "incomesSummary";
   balanceTableIncomesSummary.appendChild(sumOfIncomesH1);
 }
-/*
-function updateIncomesArrayValue() {
-  const incomesArrayValues = [];
-  incomesArray.forEach((income, index) => {
-    const incomeAsNumber = parseFloat(income.incomeAmount);
 
-    incomesArrayValues.push(incomeAsNumber);
-  });
-  return incomesArrayValues;
-}
-
-*/
+let expensesArray = [];
 
 const inputExpenseName = document.querySelector("#inputExpenseText");
 const inputExpenseAmount = document.querySelector("#inputExpenseSum");
 const inputExpenseButton = document.querySelector("#inputExpenseButton");
 const listOfExpenses = document.querySelector("#balanceTableExpensesList");
-const expensesArray = [];
-//const expensesArrayValues = [];
 
 inputExpenseButton.addEventListener("click", expenseButtonHandleClick);
 
 function expenseButtonHandleClick(event) {
   event.preventDefault();
-  if (inputExpenseAmount.value < 0) {
+  if (inputExpenseAmount.value <= 0) {
     clearExpenseForm();
     return;
   }
@@ -135,7 +120,6 @@ function expenseButtonHandleClick(event) {
     clearExpenseForm();
     return;
   }
-
   const expenseName = inputExpenseName.value;
   const expenseAmount = inputExpenseAmount.value;
   const expenseID = `expenseItem-${expensesArray.length}`;
@@ -148,6 +132,13 @@ function expenseButtonHandleClick(event) {
   createTotalExpensesLine();
   updateBalanceSheetResult();
   clearExpenseForm();
+}
+
+function updateSumOfExpenses() {
+  const totalExpenses = expensesArray.reduce((acc, currentValue) => {
+    return acc + parseFloat(currentValue.expenseAmount);
+  }, 0);
+  return totalExpenses;
 }
 
 function clearExpenseForm() {
@@ -185,25 +176,7 @@ function updateListOfExpenses() {
     });
   });
 }
-/*
-function updateExpensesArrayValue() {
-  const expensesArrayValues = [];
-  expensesArray.forEach((expense, index) => {
-    const expenseAsNumber = parseFloat(expense.expenseAmount);
-    expensesArrayValues.push(expenseAsNumber);
-  });
-  return expensesArrayValues;
-}
-*/
 
-function updateSumOfExpenses() {
-  //const expensesArrayValues = updateExpensesArrayValue();
-  const totalExpenses = expensesArray.reduce((acc, currentValue) => {
-    return acc + parseFloat(currentValue.expenseAmount);
-  }, 0);
-
-  return totalExpenses;
-}
 function createTotalExpensesLine() {
   const sumOfExpenses = updateSumOfExpenses().toFixed(2);
   balanceTableExpensesSummary.innerHTML = "";
