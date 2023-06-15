@@ -96,7 +96,7 @@ function createTotalIncomesLine() {
   sumOfIncomesH1.id = "incomesSummary";
   balanceTableIncomesSummary.appendChild(sumOfIncomesH1);
 }
-
+//
 let expensesArray = [];
 
 const inputExpenseName = document.querySelector("#inputExpenseText");
