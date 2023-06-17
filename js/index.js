@@ -174,6 +174,23 @@ function updateListOfExpenses() {
       createTotalExpensesLine();
       updateBalanceSheetResult();
     });
+    buttonEdit[index].addEventListener("click", () => {
+      console.log("klikam");
+      const wsad = document.querySelector("#balanceTableExpensesList");
+      console.log(wsad);
+      //<form class="inputFields__expenses--inputArea">
+      //       <input
+      //         type="text"
+      //         id="inputExpenseText"
+      //         placeholder="Nazwa wydatku"
+      //       />
+      //       <input type="number" id="inputExpenseSum" placeholder="Kwota" />
+      //       <button type="button" id="inputExpenseButton">DODAJ</button>
+      //     </form>
+      const correction = document.createElement("form");
+      correction.innerHTML = `<div class = 'nowosc'><div class = 'nowoscdwa'><input type = "text" placeholder = "Nazwa wydatku" class = 'tylko'/><input placeholder = 'Kwota' class = 'tylko'/><button class = 'tylko'>ACCEPT</button><button class = 'tylko'>DELETE</button></div></div>`;
+      wsad.appendChild(correction);
+    });
   });
 }
 

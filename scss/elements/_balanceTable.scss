@@ -56,3 +56,19 @@
     }
   }
 }
+.nowosc {
+  display: flex;
+  //flex-direction: column;
+  align-items: center;
+  height: 100px;
+  background-color: green;
+  z-index: 40;
+}
+.nowoscdwa {
+  height: 25px;
+  display: flex;
+  justify-content: space-around;
+}
+.tylko {
+  width: 20%;
+}
