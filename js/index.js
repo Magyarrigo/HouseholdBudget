@@ -85,6 +85,27 @@ function updateListOfIncomes() {
       createTotalIncomesLine();
       updateBalanceSheetResult();
     });
+    buttonEdit[index].addEventListener("click", () => {
+      const newIncomeName = window.prompt("Popraw nazwę", income.incomeName);
+      const newIncomeAmount = window.prompt(
+        "Popraw kwotę",
+        income.incomeAmount
+      );
+
+      const current = incomesArray.find(
+        (item) => item.incomeID === income.incomeID
+      );
+
+      current.incomeName = newIncomeName;
+      current.incomeAmount = newIncomeAmount;
+
+      incomeItem[
+        index
+      ].textContent = `${income.incomeName} - ${income.incomeAmount} ${currency}`;
+
+      createTotalIncomesLine();
+      updateBalanceSheetResult();
+    });
   });
 }
 function createTotalIncomesLine() {
@@ -175,35 +196,27 @@ function updateListOfExpenses() {
       updateBalanceSheetResult();
     });
     //buttonEdit[index].addEventListener("click", () => {
-      buttonEdit[index].addEventListener("click", () => {
-        const newName = window.prompt('Podaj nowa nazwe', expense.expenseName);
-        const newAmount = window.prompt('Podaj nowa kwote', expense.expenseAmount);
-    
-        const current = expensesArray.find(item => item.expenseID === expense.expenseID)
-        current.expenseName = newName;
-        current.expenseAmount = newAmount;
-        
-        createTotalExpensesLine();
-        updateBalanceSheetResult();
+    buttonEdit[index].addEventListener("click", () => {
+      const newExpenseName = window.prompt("Popraw nazwę", expense.expenseName);
+      const newExpenseAmount = window.prompt(
+        "Popraw kwotę",
+        expense.expenseAmount
+      );
+
+      const current = expensesArray.find(
+        (item) => item.expenseID === expense.expenseID
+      );
+
+      current.expenseName = newExpenseName;
+      current.expenseAmount = newExpenseAmount;
+
+      expenseItem[
+        index
+      ].textContent = `${expense.expenseName} - ${expense.expenseAmount} ${currency}`;
+
+      createTotalExpensesLine();
+      updateBalanceSheetResult();
     });
-    /*  
-      console.log("klikam");
-      const wsad = document.querySelector("#balanceTableExpensesList");
-      console.log(wsad);
-      //<form class="inputFields__expenses--inputArea">
-      //       <input
-      //         type="text"
-      //         id="inputExpenseText"
-      //         placeholder="Nazwa wydatku"
-      //       />
-      //       <input type="number" id="inputExpenseSum" placeholder="Kwota" />
-      //       <button type="button" id="inputExpenseButton">DODAJ</button>
-      //     </form>
-      const correction = document.createElement("form");
-      correction.innerHTML = `<div class = 'nowosc'><div class = 'nowoscdwa'><input type = "text" placeholder = "Nazwa wydatku" class = 'tylko'/><input placeholder = 'Kwota' class = 'tylko'/><button class = 'tylko'>ACCEPT</button><button class = 'tylko'>DELETE</button></div></div>`;
-      wsad.appendChild(correction);
-    });
-    */
   });
 }
 
