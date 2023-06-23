@@ -11,13 +11,13 @@
       margin-top: 15px;
       display: flex;
       justify-content: space-around;
-      #inputIncomeText {
+      .inputIncomeText {
         width: 35%;
       }
-      #inputIncomeSum {
+      .inputIncomeSum {
         width: 25%;
       }
-      #inputIncomeButton {
+      .inputIncomeButton {
         width: 20%;
         font-size: 0.8em;
       }
@@ -37,13 +37,13 @@
       margin-top: 15px;
       display: flex;
       justify-content: space-around;
-      #inputExpenseText {
+      .inputExpenseText {
         width: 35%;
       }
-      #inputExpenseSum {
+      .inputExpenseSum {
         width: 25%;
       }
-      #inputExpenseButton {
+      .inputExpenseButton {
         width: 20%;
         font-size: 0.8em;
       }

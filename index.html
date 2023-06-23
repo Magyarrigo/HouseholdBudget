@@ -58,11 +58,22 @@
           <form class="inputFields__incomes--inputArea">
             <input
               type="text"
+              class="inputIncomeText"
               id="inputIncomeText"
               placeholder="Nazwa przychodu"
             />
-            <input  id="inputIncomeSum" placeholder="Kwota" />
-            <button class = "button--input" type="submit" id="inputIncomeButton">DODAJ</button>
+            <input
+              class="inputIncomeSum"
+              id="inputIncomeSum"
+              placeholder="Kwota"
+            />
+            <button
+              class="button--input inputIncomeButton"
+              type="submit"
+              id="inputIncomeButton"
+            >
+              DODAJ
+            </button>
           </form>
           <p class="inputFields__incomes--separatingLine">"."</p>
         </div>
@@ -73,11 +84,22 @@
           <form class="inputFields__expenses--inputArea">
             <input
               type="text"
+              class="inputExpenseText"
               id="inputExpenseText"
               placeholder="Nazwa wydatku"
             />
-            <input id="inputExpenseSum" placeholder="Kwota" />
-            <button class = "button--input" type="submit" id="inputExpenseButton">DODAJ</button>
+            <input
+              class="inputExpenseSum"
+              id="inputExpenseSum"
+              placeholder="Kwota"
+            />
+            <button
+              class="button--input inputExpenseButton"
+              type="submit"
+              id="inputExpenseButton"
+            >
+              DODAJ
+            </button>
           </form>
           <p class="inputFields__expenses--separatingLine">"."</p>
         </div>
@@ -166,11 +188,11 @@
         </div>
 
         <div class="footer__container--contact">
-          <div id="phone">
+          <div class = "phone" id="phone">
             <img src="./assets/phone.svg" />
             <p>+48 535 092 608</p>
           </div>
-          <div id="mail">
+          <div class = "mail" id="mail">
             <img src="./assets/mail.svg" />
             <p>b.drozd07@gmail.com</p>
           </div>
@@ -178,7 +200,7 @@
         <div class="footer_container--mediaIcons">
           <img src="./assets/Twitter.svg" />
           <img src="./assets/Facebook.svg" />
-          <img id="tiktok" src="./assets/Tiktok.jpg" />
+          <img class="tiktokIcon" id="tiktok" src="./assets/Tiktok.jpg" />
         </div>
       </div>
     </footer>

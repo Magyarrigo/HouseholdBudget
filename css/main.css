@@ -138,15 +138,15 @@ table {
   border-spacing: 0;
 }
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
-input[type="search"] {
+input[type=search] {
   -webkit-appearance: none;
   -moz-appearance: none;
   box-sizing: content-box;
@@ -304,9 +304,9 @@ select {
  *    Known issue: inner spacing remains in IE 6.
  */
 button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+html input[type=button],
+input[type=reset],
+input[type=submit] {
   -webkit-appearance: button; /* 2 */
   cursor: pointer; /* 3 */
   *overflow: visible; /* 4 */
@@ -326,8 +326,8 @@ html input[disabled] {
  * 3. Remove excess padding in IE 7.
  *    Known issue: excess padding remains in IE 6.
  */
-input[type="checkbox"],
-input[type="radio"] {
+input[type=checkbox],
+input[type=radio] {
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
   *height: 13px; /* 3 */
@@ -339,7 +339,7 @@ input[type="radio"] {
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-input[type="search"] {
+input[type=search] {
   -webkit-appearance: textfield; /* 1 */ /* 2 */
   box-sizing: content-box;
 }
@@ -348,8 +348,8 @@ input[type="search"] {
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -494,11 +494,11 @@ h1 {
   flex-wrap: wrap;
 }
 
-[class*="col-"] {
+[class*=col-] {
   min-height: 1px;
 }
 @media only screen and (max-width: 900px) {
-  [class*="col-"] {
+  [class*=col-] {
     width: 100%;
   }
 }
@@ -610,19 +610,13 @@ h1 {
     display: block;
     transition: 0.3s ease-in-out;
   }
-  .header
-    .navContainer__hamburger--active
-    .navContainer__hamburger--line:first-child {
+  .header .navContainer__hamburger--active .navContainer__hamburger--line:first-child {
     transform: translateY(-999px);
   }
-  .header
-    .navContainer__hamburger--active
-    .navContainer__hamburger--line:nth-child(2) {
+  .header .navContainer__hamburger--active .navContainer__hamburger--line:nth-child(2) {
     transform: rotate(-405deg) translateY(10px);
   }
-  .header
-    .navContainer__hamburger--active
-    .navContainer__hamburger--line:nth-child(3) {
+  .header .navContainer__hamburger--active .navContainer__hamburger--line:nth-child(3) {
     transform: rotate(45deg) translateY(-10px);
   }
 }
@@ -685,13 +679,13 @@ h1 {
   display: flex;
   justify-content: space-around;
 }
-.inputFields__incomes--inputArea #inputIncomeText {
+.inputFields__incomes--inputArea .inputIncomeText {
   width: 35%;
 }
-.inputFields__incomes--inputArea #inputIncomeSum {
+.inputFields__incomes--inputArea .inputIncomeSum {
   width: 25%;
 }
-.inputFields__incomes--inputArea #inputIncomeButton {
+.inputFields__incomes--inputArea .inputIncomeButton {
   width: 20%;
   font-size: 0.8em;
 }
@@ -710,13 +704,13 @@ h1 {
   display: flex;
   justify-content: space-around;
 }
-.inputFields__expenses--inputArea #inputExpenseText {
+.inputFields__expenses--inputArea .inputExpenseText {
   width: 35%;
 }
-.inputFields__expenses--inputArea #inputExpenseSum {
+.inputFields__expenses--inputArea .inputExpenseSum {
   width: 25%;
 }
-.inputFields__expenses--inputArea #inputExpenseButton {
+.inputFields__expenses--inputArea .inputExpenseButton {
   width: 20%;
   font-size: 0.8em;
 }
@@ -860,7 +854,7 @@ h1 {
   }
 }
 
-#tiktok {
+.tiktokIcon {
   border-radius: 50%;
 }
 
