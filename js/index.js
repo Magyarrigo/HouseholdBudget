@@ -20,14 +20,17 @@ inputIncomeButton.addEventListener("click", incomeButtonHandleClick);
 function incomeButtonHandleClick(event) {
   event.preventDefault();
   if (inputIncomeAmount.value <= 0) {
+    alert("wprowadź poprawną wartość: LICZBA DODATNIA");
     clearIncomeForm();
     return;
   }
   if (inputIncomeAmount.value.length === 0) {
+    alert("wprowadź poprawną wartość: LICZBA DODATNIA");
     clearIncomeForm();
     return;
   }
   if (inputIncomeName.value.length === 0) {
+    alert("wprowadź poprawną wartość: NAZWA PRZYCHODU");
     clearIncomeForm();
     return;
   }
@@ -64,17 +67,18 @@ function updateListOfIncomes() {
     listOfIncomes.appendChild(item);
 
     const incomeItem = listOfIncomes.querySelectorAll("p");
-    incomeItem[
-      index
-    ].textContent = `${income.incomeName} - ${income.incomeAmount} ${currency}`;
+
+    incomeItem[index].textContent = `${income.incomeName} - ${parseFloat(
+      income.incomeAmount
+    ).toFixed(2)} ${currency}`;
     incomeItem[index].id = `${income.incomeID}`;
+    
 
     const buttonEdit = listOfIncomes.querySelectorAll(".button--edit");
     buttonEdit[index].id = "incomeButtonEdit-" + index;
-
     const buttonDelete = listOfIncomes.querySelectorAll(".button--warrning");
-
     buttonDelete[index].id = "incomeButtonDelete-" + index;
+
     buttonDelete[index].addEventListener("click", () => {
       item.remove();
       incomesArray = incomesArray.filter((item) => {
@@ -85,11 +89,13 @@ function updateListOfIncomes() {
       createTotalIncomesLine();
       updateBalanceSheetResult();
     });
+
+
     buttonEdit[index].addEventListener("click", () => {
       const newIncomeName = window.prompt("Popraw nazwę", income.incomeName);
       const newIncomeAmount = window.prompt(
         "Popraw kwotę",
-        income.incomeAmount
+        parseFloat(income.incomeAmount).toFixed(2)
       );
 
       const current = incomesArray.find(
@@ -130,14 +136,17 @@ inputExpenseButton.addEventListener("click", expenseButtonHandleClick);
 function expenseButtonHandleClick(event) {
   event.preventDefault();
   if (inputExpenseAmount.value <= 0) {
+    alert("wprowadź poprawną wartość: LICZBA DODATNIA");
     clearExpenseForm();
     return;
   }
   if (inputExpenseAmount.value.length === 0) {
+    alert("wprowadź poprawną wartość: LICZBA DODATNIA");
     clearExpenseForm();
     return;
   }
   if (inputExpenseName.value.length === 0) {
+    alert("wprowadź poprawną wartość: NAZWA WYDATKU");
     clearExpenseForm();
     return;
   }
@@ -174,9 +183,9 @@ function updateListOfExpenses() {
     listOfExpenses.appendChild(item);
 
     const expenseItem = listOfExpenses.querySelectorAll("p");
-    expenseItem[
-      index
-    ].textContent = `${expense.expenseName} - ${expense.expenseAmount} ${currency}`;
+    expenseItem[index].textContent = `${expense.expenseName} - ${parseFloat(
+      expense.expenseAmount
+    ).toFixed(2)} ${currency}`;
     expenseItem[index].id = `${expense.expenseID}`;
 
     const buttonEdit = listOfExpenses.querySelectorAll(".button--edit");
@@ -195,12 +204,12 @@ function updateListOfExpenses() {
       createTotalExpensesLine();
       updateBalanceSheetResult();
     });
-    //buttonEdit[index].addEventListener("click", () => {
+
     buttonEdit[index].addEventListener("click", () => {
       const newExpenseName = window.prompt("Popraw nazwę", expense.expenseName);
       const newExpenseAmount = window.prompt(
         "Popraw kwotę",
-        expense.expenseAmount
+        parseFloat(expense.expenseAmount).toFixed(2)
       );
 
       const current = expensesArray.find(
@@ -243,28 +252,14 @@ function updateBalanceSheetResult() {
   const sumOfExpenses = updateSumOfExpenses();
   const balanceSheetResult = (sumOfIncomes - sumOfExpenses).toFixed(2);
   balanceSheetResultField.innerHTML = "";
-  let balanceIndex = "";
-  if (balanceSheetResult == 0) {
-    balanceIndex = "balance";
-  } else if (balanceSheetResult > 0) {
-    balanceIndex = "positive";
-  } else {
-    balanceIndex = "negative";
-  }
 
   let summaryText = " ";
-  switch (balanceIndex) {
-    case "balance":
-      summaryText = `${neutralBalanceText}`;
-      break;
-    case "positive":
-      summaryText = `${positiveBalanceText} ${balanceSheetResult} ${currency}`;
-      break;
-    case "negative":
-      summaryText = `${negativeBalanceText} ${balanceSheetResult} ${currency}`;
-      break;
-    default:
-      summaryText = "WPROWADŹ POPRAWNE DANE";
+  if (balanceSheetResult == 0) {
+    summaryText = `${neutralBalanceText}`;
+  } else if (balanceSheetResult > 0) {
+    summaryText = `${positiveBalanceText} ${balanceSheetResult} ${currency}`;
+  } else {
+    summaryText = `${negativeBalanceText} ${balanceSheetResult} ${currency}`;
   }
 
   const balanceSheetResultH1 = document.createElement("h1");

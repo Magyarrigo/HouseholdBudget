@@ -1,4 +1,4 @@
-button {
+.button--input {
   border-radius: 10px;
   background-color: $color-button;
   border-color: $color-light-grey;
@@ -7,4 +7,17 @@ button {
 }
 .button--warrning {
   background-color: $color-button-warrning;
+  border-radius: 10px;
+  
+  border-color: $color-light-grey;
+  border: solid 1px;
+  color: $color-white;
+}
+.button--edit{
+  border-radius: 10px;
+  background-color: $color-button;
+  border-color: $color-light-grey;
+  border: solid 1px;
+  color: $color-white;
+
 }
