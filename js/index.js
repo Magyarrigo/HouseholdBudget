@@ -12,10 +12,14 @@ let incomesArray = [];
 
 const inputIncomeName = document.querySelector("#inputIncomeText");
 const inputIncomeAmount = document.querySelector("#inputIncomeSum");
-const inputIncomeButton = document.querySelector("#inputIncomeButton");
+
+const inputIncomeForm = document.querySelector(
+  ".inputFields__incomes--inputArea"
+);
+
 const listOfIncomes = document.querySelector("#balanceTableIncomesList");
 
-inputIncomeButton.addEventListener("click", incomeButtonHandleClick);
+inputIncomeForm.addEventListener("submit", incomeButtonHandleClick);
 
 function incomeButtonHandleClick(event) {
   event.preventDefault();
@@ -72,7 +76,6 @@ function updateListOfIncomes() {
       income.incomeAmount
     ).toFixed(2)} ${currency}`;
     incomeItem[index].id = `${income.incomeID}`;
-    
 
     const buttonEdit = listOfIncomes.querySelectorAll(".button--edit");
     buttonEdit[index].id = "incomeButtonEdit-" + index;
@@ -89,7 +92,6 @@ function updateListOfIncomes() {
       createTotalIncomesLine();
       updateBalanceSheetResult();
     });
-
 
     buttonEdit[index].addEventListener("click", () => {
       const newIncomeName = window.prompt("Popraw nazwę", income.incomeName);
@@ -128,10 +130,14 @@ let expensesArray = [];
 
 const inputExpenseName = document.querySelector("#inputExpenseText");
 const inputExpenseAmount = document.querySelector("#inputExpenseSum");
-const inputExpenseButton = document.querySelector("#inputExpenseButton");
+
+const inputExpenseForm = document.querySelector(
+  ".inputFields__expenses--inputArea"
+);
+
 const listOfExpenses = document.querySelector("#balanceTableExpensesList");
 
-inputExpenseButton.addEventListener("click", expenseButtonHandleClick);
+inputExpenseForm.addEventListener("submit", expenseButtonHandleClick);
 
 function expenseButtonHandleClick(event) {
   event.preventDefault();
