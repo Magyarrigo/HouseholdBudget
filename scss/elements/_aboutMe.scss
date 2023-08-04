@@ -3,7 +3,7 @@
 
   &__myPicture {
     &--cirkle {
-      @include mobile {
+      @include medium {
         display: none;
       }
       min-height: 360px;
@@ -15,6 +15,7 @@
     }
   }
   &__myCV {
+   
     background-color: $color-grey-medium;
     border: $color-primary 2px solid;
     border-radius: 10px;

@@ -1,7 +1,7 @@
 @use "sass:math";
 
 $columns: 12;
-$containerWidth: 1352px;
+$containerWidth: 1472px;
 $gutter: 12px;
 
 @for $i from 1 through $columns {
