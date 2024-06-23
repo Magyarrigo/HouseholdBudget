@@ -1,6 +1,6 @@
 const entryPath = ".";
 
-const gulp = require("gul");
+const gulp = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 const autoprefixer = require("gulp-autoprefixer");
