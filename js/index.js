@@ -272,4 +272,4 @@ function updateBalanceSheetResult() {
   balanceSheetResultH1.innerText = summaryText;
   balanceSheetResultH1.classList.add("balanceSheetResult");
   balanceSheetResultField.appendChild(balanceSheetResultH1);
-
+}
