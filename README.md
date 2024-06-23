@@ -1,6 +1,9 @@
 # HouseholdBudget
 
 https://fc-project-household.netlify.app/
+
+https://github.com/Magyarrigo/HouseholdBudget.git
+
 simplyHouseholdBudget
 JS - Projekt 1
 Domowy budżet
