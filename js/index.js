@@ -24,14 +24,6 @@ inputIncomeForm.addEventListener("submit", incomeButtonHandleClick);
 function incomeButtonHandleClick(event) {
   event.preventDefault();
 
-  console.log(typeof inputIncomeAmount.value);
-  const newNumber = Number(inputIncomeAmount.value);
-  console.log(newNumber);
-  // if (isNaN(newNumber)) {
-  //   alert("wprowadź poprawną wartośćNAN: LICZBA DODATNIA");
-  //    clearIncomeForm();
-  //   return;
-  // }
   if (isNaN(inputIncomeAmount.value)) {
     alert("wprowadź poprawną wartość: LICZBA DODATNIA separator to kropka");
     /*  const incomeName = inputIncomeName.value;
