@@ -33,6 +33,7 @@ function incomeButtonHandleClick(event) {
     clearIncomeForm();
     return;
   }
+
   if (inputIncomeName.value.length === 0) {
     alert("wprowadź poprawną wartość: NAZWA PRZYCHODU");
     clearIncomeForm();
