@@ -119,11 +119,11 @@ function updateListOfIncomes() {
 function createTotalIncomesLine() {
   const sumOfIncomes = updateSumOfIncomes().toFixed(2);
   balanceTableIncomesSummary.innerHTML = "";
-  const sumOfIncomesH1 = document.createElement("h1");
-  sumOfIncomesH1.innerText = `SUMA PRZYCHODÓW: ${sumOfIncomes} ${currency}`;
-  sumOfIncomesH1.classList.add("balanceTable__incomes--summary");
-  sumOfIncomesH1.id = "incomesSummary";
-  balanceTableIncomesSummary.appendChild(sumOfIncomesH1);
+  const sumOfIncomesP = document.createElement("p");
+  sumOfIncomesP.innerText = `SUMA PRZYCHODÓW: ${sumOfIncomes} ${currency}`;
+  sumOfIncomesP.classList.add("balanceTable__incomes--summary");
+  sumOfIncomesP.id = "incomesSummary";
+  balanceTableIncomesSummary.appendChild(sumOfIncomesP);
 }
 //
 let expensesArray = [];

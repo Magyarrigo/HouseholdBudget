@@ -16,16 +16,17 @@
     &--list {
       display: flex;
       justify-content: space-between;
-      padding: 1% 2% 1% 2%;
-      p {
-        width: 60%;
-      }
+      padding: 1% 2% 1% 2%;      
     }
-
+    &--item{
+      font-size: 1em;
+    }
     &--summary {
       position: relative;
       left: 15px;
       bottom: 15%;
+      font-size: 1em;
+      color: $color-primary;
     }
   }
   &__expenses {
@@ -44,15 +45,17 @@
     &--list {
       display: flex;
       justify-content: space-between;
-      padding: 1% 2% 1% 2%;
-      p {
-        width: 60%;
-      }
+      padding: 1% 2% 1% 2%;      
+    }
+    &--item{
+      font-size: 1em;
     }
     &--summary {
       position: relative;
       left: 15px;
       bottom: 15%;
+      font-size: 1em;
+      color: $color-primary;
     }
   }
 }

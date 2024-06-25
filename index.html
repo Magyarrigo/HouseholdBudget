@@ -53,7 +53,7 @@
       <section class="row inputFields">
         <div class="col-6 inputFields__incomes">
           <p class="inputFields__incomes--separatingLine">"."</p>
-          <h1 id="incomes">PRZYCHODY:</h1>
+          <h2 class="inputFields__incomes--title id="incomes">PRZYCHODY:</h2>
           <form class="inputFields__incomes--inputArea">
             <input
               type="text"
@@ -79,7 +79,7 @@
 
         <div class="col-6 inputFields__expenses">
           <p class="inputFields__expenses--separatingLine">"."</p>
-          <h1 id="expenses">WYDATKI:</h1>
+          <h2 class="inputFields__expenses--title" id="expenses">WYDATKI:</h2>
           <form class="inputFields__expenses--inputArea">
             <input
               type="text"
@@ -113,16 +113,16 @@
                 <ul id="balanceTableIncomesList">
                   <li>
                     <div class="balanceTable__incomes--list">
-                      <p id="item-0" class="balanceTable__incomes--item">
+                      <h2 id="item-0" class="balanceTable__incomes--item">
                         LISTA PRZYCHODÓW
-                      </p>
+                      </h2>
                     </div>
                   </li>
                 </ul>
               </div>
-              <h1 class="balanceTable__incomes--summary" id="incomesSummary">
+              <p class="balanceTable__incomes--summary" id="incomesSummary">
                 SUMA PRZYCHODÓW: 0 zł
-              </h1>
+              </p>
             </div>
           </div>
         </div>
@@ -133,14 +133,19 @@
               <div>
                 <p class="balanceTable__expenses--separatingLine">"."</p>
                 <ul id="balanceTableExpensesList">
-                  <li class="balanceTable__expenses--list">
-                    <p>LISTA WYDATKÓW</p>
+                  <li>
+                    <div class="balanceTable__expenses--list">
+                      <h2 id="item-0" class="balanceTable__expenses--item">
+                        LISTA WYDATKÓW
+                      </h2>
+                    </div>
                   </li>
                 </ul>
+                
               </div>
-              <h1 class="balanceTable__expenses--summary" id="expensesSummary">
+              <p class="balanceTable__expenses--summary" id="expensesSummary">
                 SUMA WYDATKÓW: 0 zł
-              </h1>
+              </p>
             </div>
           </div>
         </div>
@@ -150,8 +155,8 @@
           <div class="aboutMe__myPicture--cirkle"></div>
         </div>
         <div class="col-10 aboutMe__myCV">
-          <h2 id="about">about Me</h2>
-          <p>
+          <h2 class="aboutMe__myCV--title" id="about">about Me</h2>
+          <p class="aboutMe__myCV--resume">
             I graduated from the Technical University in Budapest. I'm Master of
             Science in Nuclear Power Engineering. I have been interested in
             programming since my studies. Last year I became interested in
@@ -160,14 +165,14 @@
             "Java Script and React" courses at FUTURE COLLARS.
           </p>
 
-          <p>
+          <p class="aboutMe__myCV--resume">
             Fluent in German, Russian and Hungarian. English - B2. My native
             language is Polish.
           </p>
 
-          <p>I will be happy to answer your questions.</p>
+          <p class="aboutMe__myCV--resume">I will be happy to answer your questions.</p>
 
-          <p>
+          <p class="aboutMe__myCV--resume">
             Basketball is my cup of tea. I was a basketball referee for 25
             years.
           </p>

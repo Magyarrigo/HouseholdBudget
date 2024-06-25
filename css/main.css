@@ -686,6 +686,9 @@ h1 {
 .inputFields__incomes--separatingLine {
   color: #e1e2e3;
 }
+.inputFields__incomes--title {
+  font-size: 1.5em;
+}
 .inputFields__expenses {
   padding-left: 10px;
   border-radius: 10px;
@@ -711,6 +714,9 @@ h1 {
 .inputFields__expenses--separatingLine {
   color: #e1e2e3;
 }
+.inputFields__expenses--title {
+  font-size: 1.5em;
+}
 
 .balanceTable {
   height: 400px;
@@ -734,13 +740,15 @@ h1 {
   justify-content: space-between;
   padding: 1% 2% 1% 2%;
 }
-.balanceTable__incomes--list p {
-  width: 60%;
+.balanceTable__incomes--item {
+  font-size: 1em;
 }
 .balanceTable__incomes--summary {
   position: relative;
   left: 15px;
   bottom: 15%;
+  font-size: 1em;
+  color: rgb(3, 3, 196);
 }
 .balanceTable__expenses {
   position: relative;
@@ -761,13 +769,15 @@ h1 {
   justify-content: space-between;
   padding: 1% 2% 1% 2%;
 }
-.balanceTable__expenses--list p {
-  width: 60%;
+.balanceTable__expenses--item {
+  font-size: 1em;
 }
 .balanceTable__expenses--summary {
   position: relative;
   left: 15px;
   bottom: 15%;
+  font-size: 1em;
+  color: rgb(3, 3, 196);
 }
 
 .aboutMe {
@@ -791,16 +801,16 @@ h1 {
   border: rgb(3, 3, 196) 2px solid;
   border-radius: 10px;
 }
-.aboutMe__myCV h2 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 600;
-  color: rgb(3, 3, 196);
-  padding-top: 1em;
-}
-.aboutMe__myCV p {
+.aboutMe__myCV--resume {
   padding: 1.5em 3em 0 3em;
   letter-spacing: 2px;
+}
+.aboutMe__myCV--title {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.5em;
+  color: rgb(3, 3, 196);
+  padding-top: 1em;
 }
 
 .footer {
