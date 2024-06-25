@@ -23,11 +23,58 @@ inputIncomeForm.addEventListener("submit", incomeButtonHandleClick);
 
 function incomeButtonHandleClick(event) {
   event.preventDefault();
+
+  console.log(typeof inputIncomeAmount.value);
+  const newNumber = Number(inputIncomeAmount.value);
+  console.log(newNumber);
+  // if (isNaN(newNumber)) {
+  //   alert("wprowadź poprawną wartośćNAN: LICZBA DODATNIA");
+  //    clearIncomeForm();
+  //   return;
+  // }
+  if (isNaN(inputIncomeAmount.value)) {
+    alert("wprowadź poprawną wartość: LICZBA DODATNIA separator to kropka");
+    /*  const incomeName = inputIncomeName.value;
+    const incomeAmount = inputIncomeAmount.value;
+    const incomeID = `incomeItem-${incomesArray.length}`;
+    incomesArray.push({
+      incomeName: incomeName,
+      incomeAmount: incomeAmount,
+      incomeID: incomeID,
+    });
+    console.log(incomeID);
+    updateListOfIncomes();
+    updateBalanceSheetResult();
+    createTotalIncomesLine();
+    const newIncomeName = window.prompt("Popraw nazwę", income.incomeName);
+    const newIncomeAmount = window.prompt(
+      "Popraw kwotę",
+      parseFloat(income.incomeAmount).toFixed(2)
+    );
+
+    const current = incomesArray.find(
+      (item) => item.incomeID === income.incomeID
+    );
+
+    current.incomeName = newIncomeName;
+    current.incomeAmount = newIncomeAmount;
+
+    incomeItem[
+      index
+    ].textContent = `${income.incomeName} - ${income.incomeAmount} ${currency}`;
+
+    createTotalIncomesLine();
+    updateBalanceSheetResult();
+    */ clearIncomeForm();
+    return;
+  }
+
   if (inputIncomeAmount.value <= 0) {
     alert("wprowadź poprawną wartość: LICZBA DODATNIA");
     clearIncomeForm();
     return;
   }
+
   if (inputIncomeAmount.value.length === 0) {
     alert("wprowadź poprawną wartość: LICZBA DODATNIA");
     clearIncomeForm();
