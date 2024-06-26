@@ -25,57 +25,24 @@ function incomeButtonHandleClick(event) {
   event.preventDefault();
 
   if (isNaN(inputIncomeAmount.value)) {
-    alert("wprowadź poprawną wartość: LICZBA DODATNIA separator to kropka");
-    /*  const incomeName = inputIncomeName.value;
-    const incomeAmount = inputIncomeAmount.value;
-    const incomeID = `incomeItem-${incomesArray.length}`;
-    incomesArray.push({
-      incomeName: incomeName,
-      incomeAmount: incomeAmount,
-      incomeID: incomeID,
-    });
-    console.log(incomeID);
-    updateListOfIncomes();
-    updateBalanceSheetResult();
-    createTotalIncomesLine();
-    const newIncomeName = window.prompt("Popraw nazwę", income.incomeName);
-    const newIncomeAmount = window.prompt(
-      "Popraw kwotę",
-      parseFloat(income.incomeAmount).toFixed(2)
+    alert(
+      "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH UŻYWAJ KROPKI JAKO SEPARATORA CZĘŚCI DZIESIĘTNEJ "
     );
-
-    const current = incomesArray.find(
-      (item) => item.incomeID === income.incomeID
-    );
-
-    current.incomeName = newIncomeName;
-    current.incomeAmount = newIncomeAmount;
-
-    incomeItem[
-      index
-    ].textContent = `${income.incomeName} - ${income.incomeAmount} ${currency}`;
-
-    createTotalIncomesLine();
-    updateBalanceSheetResult();
-    */ clearIncomeForm();
     return;
   }
 
   if (inputIncomeAmount.value <= 0) {
-    alert("wprowadź poprawną wartość: LICZBA DODATNIA");
-    clearIncomeForm();
+    alert("wprowadź poprawną wartość: LICZBA POWINNA BYĆ WIĘKSZA OD ZERA");
     return;
   }
 
   if (inputIncomeAmount.value.length === 0) {
-    alert("wprowadź poprawną wartość: LICZBA DODATNIA");
-    clearIncomeForm();
+    alert("wprowadź poprawną wartość: BRAK PODANIA KWOTY");
     return;
   }
 
   if (inputIncomeName.value.length === 0) {
-    alert("wprowadź poprawną wartość: NAZWA PRZYCHODU");
-    clearIncomeForm();
+    alert(" wprowadź dane: NAZWA PRZYCHODU");
     return;
   }
   const incomeName = inputIncomeName.value;
