@@ -101,11 +101,25 @@ function updateListOfIncomes() {
     });
 
     buttonEdit[index].addEventListener("click", () => {
-      const newIncomeName = window.prompt("Popraw nazwę", income.incomeName);
-      const newIncomeAmount = window.prompt(
+      var newIncomeName = window.prompt("Popraw nazwę", income.incomeName);
+      var newIncomeAmount = window.prompt(
         "Popraw kwotę",
         parseFloat(income.incomeAmount).toFixed(2)
       );
+      console.log(newIncomeName);
+      if (newIncomeAmount.length === 0) {
+        alert("wprowadź poprawną wartość: BRAK PODANIA KWOTY");
+        newIncomeName = window.prompt("Popraw nazwę", income.incomeName);
+        newIncomeAmount = window.prompt(
+          "Popraw kwotę",
+          parseFloat(income.incomeAmount).toFixed(2)
+        );
+        return;
+      }
+      if (newIncomeAmount <= 0) {
+        alert("wprowadź poprawną wartość: LICZBA POWINNA BYĆ WIĘKSZA OD ZERA");
+        return;
+      }
 
       const current = incomesArray.find(
         (item) => item.incomeID === income.incomeID
