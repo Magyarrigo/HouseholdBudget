@@ -121,15 +121,16 @@ function updateListOfIncomes() {
         "Popraw kwotę",
         parseFloat(income.incomeAmount).toFixed(2)
       );
-
+      /*
+       */
       if (isNaN(newIncomeAmount)) {
-        window.prompt(
+        newIncomeAmount = window.prompt(
           "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH UŻYWAJ KROPKI JAKO SEPARATORA CZĘŚCI DZIESIĘTNEJ "
         );
       }
 
       if (isNaN(newIncomeAmount)) {
-        window.prompt(
+        newIncomeAmount = window.prompt(
           "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH PAMIĘTAJ O UŻYCIU KROPKI "
         );
       }
@@ -140,7 +141,8 @@ function updateListOfIncomes() {
         );
         return;
       }
-
+      /*
+       */
       if (newIncomeAmount.length === 0) {
         newIncomeAmount = window.prompt(
           "wprowadź poprawną kwotę:",
@@ -172,6 +174,24 @@ function updateListOfIncomes() {
       if (newIncomeAmount <= 0) {
         alert(
           "nie wprowadzono kwoty większej od zera: P O N Ó W    E D Y C J Ę"
+        );
+        return;
+      }
+      if (isNaN(newIncomeAmount)) {
+        newIncomeAmount = window.prompt(
+          "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH UŻYWAJ KROPKI JAKO SEPARATORA CZĘŚCI DZIESIĘTNEJ "
+        );
+      }
+
+      if (isNaN(newIncomeAmount)) {
+        newIncomeAmount = window.prompt(
+          "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH PAMIĘTAJ O UŻYCIU KROPKI "
+        );
+      }
+
+      if (isNaN(newIncomeAmount)) {
+        alert(
+          "nie wprowadzono poprawnego formatu liczby: P O N Ó W    E D Y C J Ę"
         );
         return;
       }
@@ -313,13 +333,13 @@ function updateListOfExpenses() {
       );
 
       if (isNaN(newExpenseAmount)) {
-        window.prompt(
+        newExpenseAmount = window.prompt(
           "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH UŻYWAJ KROPKI JAKO SEPARATORA CZĘŚCI DZIESIĘTNEJ "
         );
       }
 
       if (isNaN(newExpenseAmount)) {
-        window.prompt(
+        newExpenseAmount = window.prompt(
           "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH PAMIĘTAJ O UŻYCIU KROPKI "
         );
       }
@@ -366,13 +386,13 @@ function updateListOfExpenses() {
         return;
       }
       if (isNaN(newExpenseAmount)) {
-        window.prompt(
+        newExpenseAmount = window.prompt(
           "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH UŻYWAJ KROPKI JAKO SEPARATORA CZĘŚCI DZIESIĘTNEJ "
         );
       }
 
       if (isNaN(newExpenseAmount)) {
-        window.prompt(
+        newExpenseAmount = window.prompt(
           "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH PAMIĘTAJ O UŻYCIU KROPKI "
         );
       }
@@ -384,13 +404,6 @@ function updateListOfExpenses() {
         return;
       }
 
-      /* buttonEdit[index].addEventListener("click", () => {
-      const newExpenseName = window.prompt("Popraw nazwę", expense.expenseName);
-      const newExpenseAmount = window.prompt(
-        "Popraw kwotę",
-        parseFloat(expense.expenseAmount).toFixed(2)
-      );
-*/
       const current = expensesArray.find(
         (item) => item.expenseID === expense.expenseID
       );
