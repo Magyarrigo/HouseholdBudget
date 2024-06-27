@@ -101,23 +101,78 @@ function updateListOfIncomes() {
     });
 
     buttonEdit[index].addEventListener("click", () => {
-      var newIncomeName = window.prompt("Popraw nazwę", income.incomeName);
-      var newIncomeAmount = window.prompt(
+      let newIncomeName = window.prompt("Popraw nazwę");
+
+      if (newIncomeName.length === 0) {
+        newIncomeName = window.prompt("wprowadź dane:NAZWA PRZYCHODU");
+      }
+
+      if (newIncomeName.length === 0) {
+        alert(" wprowadź dane: NAZWA PRZYCHODU");
+        newIncomeName = window.prompt("wprowadź dane:NAZWA PRZYCHODU");
+      }
+
+      if (newIncomeName.length === 0) {
+        alert(" nie wprowadzono nazwy przychodu: P O N Ó W    E D Y C J Ę");
+        return;
+      }
+
+      let newIncomeAmount = window.prompt(
         "Popraw kwotę",
         parseFloat(income.incomeAmount).toFixed(2)
       );
-      console.log(newIncomeName);
+
+      if (isNaN(newIncomeAmount)) {
+        window.prompt(
+          "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH UŻYWAJ KROPKI JAKO SEPARATORA CZĘŚCI DZIESIĘTNEJ "
+        );
+      }
+
+      if (isNaN(newIncomeAmount)) {
+        window.prompt(
+          "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH PAMIĘTAJ O UŻYCIU KROPKI "
+        );
+      }
+
+      if (isNaN(newIncomeAmount)) {
+        alert(
+          "nie wprowadzono poprawnego formatu liczby: P O N Ó W    E D Y C J Ę"
+        );
+        return;
+      }
+
       if (newIncomeAmount.length === 0) {
-        alert("wprowadź poprawną wartość: BRAK PODANIA KWOTY");
-        newIncomeName = window.prompt("Popraw nazwę", income.incomeName);
         newIncomeAmount = window.prompt(
-          "Popraw kwotę",
+          "wprowadź poprawną kwotę:",
+          parseFloat(income.incomeAmount).toFixed(2)
+        );
+      }
+
+      if (newIncomeAmount.length === 0) {
+        newIncomeAmount = window.prompt(
+          "wprowadź poprawną kwotę: BRAK PODANIA KWOTY",
+          parseFloat(income.incomeAmount).toFixed(2)
+        );
+      }
+
+      if (newIncomeAmount.length === 0) {
+        alert(
+          "nie wprowadzono żadnej kwoty: P O N Ó W    E D Y C J Ę",
           parseFloat(income.incomeAmount).toFixed(2)
         );
         return;
       }
+
       if (newIncomeAmount <= 0) {
-        alert("wprowadź poprawną wartość: LICZBA POWINNA BYĆ WIĘKSZA OD ZERA");
+        newIncomeAmount = window.prompt(
+          "wprowadź poprawną wartość: LICZBA POWINNA BYĆ WIĘKSZA OD ZERA"
+        );
+      }
+
+      if (newIncomeAmount <= 0) {
+        alert(
+          "nie wprowadzono kwoty większej od zera: P O N Ó W    E D Y C J Ę"
+        );
         return;
       }
 
@@ -162,19 +217,22 @@ inputExpenseForm.addEventListener("submit", expenseButtonHandleClick);
 
 function expenseButtonHandleClick(event) {
   event.preventDefault();
+  if (isNaN(inputExpenseAmount.value)) {
+    alert(
+      "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH UŻYWAJ KROPKI JAKO SEPARATORA CZĘŚCI DZIESIĘTNEJ "
+    );
+    return;
+  }
   if (inputExpenseAmount.value <= 0) {
     alert("wprowadź poprawną wartość: LICZBA DODATNIA");
-    clearExpenseForm();
     return;
   }
   if (inputExpenseAmount.value.length === 0) {
     alert("wprowadź poprawną wartość: LICZBA DODATNIA");
-    clearExpenseForm();
     return;
   }
   if (inputExpenseName.value.length === 0) {
     alert("wprowadź poprawną wartość: NAZWA WYDATKU");
-    clearExpenseForm();
     return;
   }
   const expenseName = inputExpenseName.value;
