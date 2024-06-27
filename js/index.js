@@ -365,6 +365,24 @@ function updateListOfExpenses() {
         );
         return;
       }
+      if (isNaN(newExpenseAmount)) {
+        window.prompt(
+          "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH UŻYWAJ KROPKI JAKO SEPARATORA CZĘŚCI DZIESIĘTNEJ "
+        );
+      }
+
+      if (isNaN(newExpenseAmount)) {
+        window.prompt(
+          "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH PAMIĘTAJ O UŻYCIU KROPKI "
+        );
+      }
+
+      if (isNaN(newExpenseAmount)) {
+        alert(
+          "nie wprowadzono poprawnego formatu liczby: P O N Ó W    E D Y C J Ę"
+        );
+        return;
+      }
 
       /* buttonEdit[index].addEventListener("click", () => {
       const newExpenseName = window.prompt("Popraw nazwę", expense.expenseName);
