@@ -291,12 +291,88 @@ function updateListOfExpenses() {
     });
 
     buttonEdit[index].addEventListener("click", () => {
+      let newExpenseName = window.prompt("Popraw nazwę");
+
+      if (newExpenseName.length === 0) {
+        newExpenseName = window.prompt("wprowadź dane:NAZWA WYDATKU");
+      }
+
+      if (newExpenseName.length === 0) {
+        alert(" wprowadź dane: NAZWA WYDATKU");
+        newExpenseName = window.prompt("wprowadź dane:NAZWA WYDATKU");
+      }
+
+      if (newExpenseName.length === 0) {
+        alert(" nie wprowadzono nazwy WYDATKU: P O N Ó W    E D Y C J Ę");
+        return;
+      }
+
+      let newExpenseAmount = window.prompt(
+        "Popraw kwotę",
+        parseFloat(expense.expenseAmount).toFixed(2)
+      );
+
+      if (isNaN(newExpenseAmount)) {
+        window.prompt(
+          "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH UŻYWAJ KROPKI JAKO SEPARATORA CZĘŚCI DZIESIĘTNEJ "
+        );
+      }
+
+      if (isNaN(newExpenseAmount)) {
+        window.prompt(
+          "wprowadź poprawną wartość: PRZY WPROWADZANIU LICZB NIECAŁKOWITYCH PAMIĘTAJ O UŻYCIU KROPKI "
+        );
+      }
+
+      if (isNaN(newExpenseAmount)) {
+        alert(
+          "nie wprowadzono poprawnego formatu liczby: P O N Ó W    E D Y C J Ę"
+        );
+        return;
+      }
+
+      if (newExpenseAmount.length === 0) {
+        newExpenseAmount = window.prompt(
+          "wprowadź poprawną kwotę:",
+          parseFloat(expense.expenseAmount).toFixed(2)
+        );
+      }
+
+      if (newExpenseAmount.length === 0) {
+        newExpenseAmount = window.prompt(
+          "wprowadź poprawną kwotę: BRAK PODANIA KWOTY",
+          parseFloat(expense.expenseAmount).toFixed(2)
+        );
+      }
+
+      if (newExpenseAmount.length === 0) {
+        alert(
+          "nie wprowadzono żadnej kwoty: P O N Ó W    E D Y C J Ę",
+          parseFloat(expense.expenseAmount).toFixed(2)
+        );
+        return;
+      }
+
+      if (newExpenseAmount <= 0) {
+        newExpenseAmount = window.prompt(
+          "wprowadź poprawną wartość: LICZBA POWINNA BYĆ WIĘKSZA OD ZERA"
+        );
+      }
+
+      if (newExpenseAmount <= 0) {
+        alert(
+          "nie wprowadzono kwoty większej od zera: P O N Ó W    E D Y C J Ę"
+        );
+        return;
+      }
+
+      /* buttonEdit[index].addEventListener("click", () => {
       const newExpenseName = window.prompt("Popraw nazwę", expense.expenseName);
       const newExpenseAmount = window.prompt(
         "Popraw kwotę",
         parseFloat(expense.expenseAmount).toFixed(2)
       );
-
+*/
       const current = expensesArray.find(
         (item) => item.expenseID === expense.expenseID
       );
